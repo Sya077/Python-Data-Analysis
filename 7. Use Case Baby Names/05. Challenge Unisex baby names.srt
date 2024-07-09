@@ -1,0 +1,80 @@
+1
+00:00:00,03 --> 00:00:05,06
+(playful music)
+
+2
+00:00:05,06 --> 00:00:07,00
+- [Narrator] For your challenge,
+
+3
+00:00:07,00 --> 00:00:10,05
+I would like you to find a top ten unisex names
+
+4
+00:00:10,05 --> 00:00:13,01
+and to plot their popularity throughout the years
+
+5
+00:00:13,01 --> 00:00:17,07
+for both the male and female usage of the name.
+
+6
+00:00:17,07 --> 00:00:20,08
+We will define unisex names as those for which
+
+7
+00:00:20,08 --> 00:00:23,08
+the total number of boys and a total number of girls
+
+8
+00:00:23,08 --> 00:00:28,06
+born across all years and within a factor of two.
+
+9
+00:00:28,06 --> 00:00:29,08
+That means that you're going to compute
+
+10
+00:00:29,08 --> 00:00:31,02
+the total number of boys,
+
+11
+00:00:31,02 --> 00:00:33,06
+divide by the total number of girls,
+
+12
+00:00:33,06 --> 00:00:37,05
+and verify that that's between 0.5 and two.
+
+13
+00:00:37,05 --> 00:00:41,05
+Given the technical nature of some Pandas computations,
+
+14
+00:00:41,05 --> 00:00:43,03
+I have some hints for you.
+
+15
+00:00:43,03 --> 00:00:46,07
+Try using DataFrame.groupby().
+
+16
+00:00:46,07 --> 00:00:48,05
+Take advantage of the fact that Pandas
+
+17
+00:00:48,05 --> 00:00:52,07
+can execute a mathematical operation between two series
+
+18
+00:00:52,07 --> 00:00:55,04
+even if they have different indexes.
+
+19
+00:00:55,04 --> 00:00:58,08
+And finally, if you need to drop not a number,
+
+20
+00:00:58,08 --> 00:01:03,00
+nan values, use DataFrame.dropna.
+

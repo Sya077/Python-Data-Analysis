@@ -1,0 +1,368 @@
+1
+00:00:00,01 --> 00:00:02,03
+- [Instructor] In Python, especially when
+
+2
+00:00:02,03 --> 00:00:04,05
+you're dealing with data, there are many cases
+
+3
+00:00:04,05 --> 00:00:06,08
+where you want to iterate over a list
+
+4
+00:00:06,08 --> 00:00:10,04
+or a dict performing operation on every element
+
+5
+00:00:10,04 --> 00:00:15,06
+and then collect all the results in a new list, or dict.
+
+6
+00:00:15,06 --> 00:00:18,00
+You can certainly do that with a loop.
+
+7
+00:00:18,00 --> 00:00:20,02
+For instance, picking up the example
+
+8
+00:00:20,02 --> 00:00:21,07
+from the last video,
+
+9
+00:00:21,07 --> 00:00:24,02
+let's compute the first 10 squares,
+
+10
+00:00:24,02 --> 00:00:26,06
+starting with an empty list and adding
+
+11
+00:00:26,06 --> 00:00:31,09
+elements in the body of the loop with append.
+
+12
+00:00:31,09 --> 00:00:34,03
+This works, but we can do better.
+
+13
+00:00:34,03 --> 00:00:36,08
+We can be more pythonic, that is,
+
+14
+00:00:36,08 --> 00:00:42,02
+we can respect Python's specific style and spirit.
+
+15
+00:00:42,02 --> 00:00:45,08
+Python offers a great feature, comprehensions,
+
+16
+00:00:45,08 --> 00:00:47,06
+that let us write shorter,
+
+17
+00:00:47,06 --> 00:00:49,08
+more easily readable code,
+
+18
+00:00:49,08 --> 00:00:53,03
+that achieves the same effect as the loop.
+
+19
+00:00:53,03 --> 00:00:55,02
+In fact, the comprehension
+
+20
+00:00:55,02 --> 00:00:58,03
+is a compressed version of the loop.
+
+21
+00:00:58,03 --> 00:01:00,07
+Let's go through the steps to write one.
+
+22
+00:01:00,07 --> 00:01:04,04
+It's a list we want, so we have brackets.
+
+23
+00:01:04,04 --> 00:01:07,07
+Next, we have the loop.
+
+24
+00:01:07,07 --> 00:01:11,05
+And then we backtrack to the beginning of the expression
+
+25
+00:01:11,05 --> 00:01:13,07
+and we write code for the computation
+
+26
+00:01:13,07 --> 00:01:15,06
+that we want to collect.
+
+27
+00:01:15,06 --> 00:01:18,09
+In this case, taking the square.
+
+28
+00:01:18,09 --> 00:01:21,00
+The result is the same,
+
+29
+00:01:21,00 --> 00:01:22,04
+but we managed to write it
+
+30
+00:01:22,04 --> 00:01:26,00
+in a very readable and efficient way.
+
+31
+00:01:26,00 --> 00:01:30,05
+We can also filter the list of elements that we are creating
+
+32
+00:01:30,05 --> 00:01:33,03
+by adding an if clause.
+
+33
+00:01:33,03 --> 00:01:37,02
+For instance, we may want to collect only the squares
+
+34
+00:01:37,02 --> 00:01:41,02
+that are divisible by four,
+
+35
+00:01:41,02 --> 00:01:46,03
+which in fact, I need to do with the modulus operator.
+
+36
+00:01:46,03 --> 00:01:49,05
+Again, quick and readable.
+
+37
+00:01:49,05 --> 00:01:53,02
+In Python three, comprehension largely replace
+
+38
+00:01:53,02 --> 00:01:56,03
+the map and filter built-in functions,
+
+39
+00:01:56,03 --> 00:01:59,05
+which are important and so called functional languages,
+
+40
+00:01:59,05 --> 00:02:02,08
+but did not really belong in Python.
+
+41
+00:02:02,08 --> 00:02:05,06
+The syntax for dictionary comprehensions
+
+42
+00:02:05,06 --> 00:02:08,05
+is also rather intuitive.
+
+43
+00:02:08,05 --> 00:02:11,01
+For instance, let's create a dictionary
+
+44
+00:02:11,01 --> 00:02:12,06
+that will get us the square
+
+45
+00:02:12,06 --> 00:02:16,08
+of an integer from the integer itself.
+
+46
+00:02:16,08 --> 00:02:21,00
+It's a dictionary, so we need braces.
+
+47
+00:02:21,00 --> 00:02:24,01
+The loop part is the same
+
+48
+00:02:24,01 --> 00:02:27,07
+for variable and iterable.
+
+49
+00:02:27,07 --> 00:02:30,03
+But now, instead of the list items,
+
+50
+00:02:30,03 --> 00:02:35,05
+we need to write key colon value pairs.
+
+51
+00:02:35,05 --> 00:02:38,04
+We can also add an if clause if we want.
+
+52
+00:02:38,04 --> 00:02:42,03
+I don't need one here.
+
+53
+00:02:42,03 --> 00:02:45,02
+Here is the result in dict.
+
+54
+00:02:45,02 --> 00:02:47,08
+Dict comprehensions are sometimes used
+
+55
+00:02:47,08 --> 00:02:51,00
+to transpose an existing dict.
+
+56
+00:02:51,00 --> 00:02:52,07
+Going back to our capitals,
+
+57
+00:02:52,07 --> 00:02:57,00
+which we wrote as a dictionary index by country,
+
+58
+00:02:57,00 --> 00:03:02,03
+we can get the countries index by capital.
+
+59
+00:03:02,03 --> 00:03:06,01
+In the comprehension, we loop over the dict items,
+
+60
+00:03:06,01 --> 00:03:09,07
+so we get tuples of country and capital,
+
+61
+00:03:09,07 --> 00:03:15,07
+and we invert them by writing capital colon country.
+
+62
+00:03:15,07 --> 00:03:18,03
+Sometimes, you see what look like naked
+
+63
+00:03:18,03 --> 00:03:21,03
+comprehensions without the brackets.
+
+64
+00:03:21,03 --> 00:03:24,03
+Those are in fact generator expressions,
+
+65
+00:03:24,03 --> 00:03:27,04
+which are useful when you want to generate a sequence
+
+66
+00:03:27,04 --> 00:03:29,09
+and consume the elements one by one
+
+67
+00:03:29,09 --> 00:03:34,01
+without ever storing them in a list or a dict.
+
+68
+00:03:34,01 --> 00:03:37,07
+For instance, to take the sum of the first 10 squares,
+
+69
+00:03:37,07 --> 00:03:41,03
+we may write the interior part of our comprehension
+
+70
+00:03:41,03 --> 00:03:46,03
+without the brackets and feed it directly to sum.
+
+71
+00:03:46,03 --> 00:03:48,08
+Doing this, saves memory and time
+
+72
+00:03:48,08 --> 00:03:52,02
+which is important if you deal with large amounts of data.
+
+73
+00:03:52,02 --> 00:03:55,04
+In fact, the built-in range which we used earlier
+
+74
+00:03:55,04 --> 00:03:58,07
+to demonstrate loops does something very similar.
+
+75
+00:03:58,07 --> 00:04:00,09
+It never builds a list, but it keeps
+
+76
+00:04:00,09 --> 00:04:04,02
+adding new values to the loop.
+
+77
+00:04:04,02 --> 00:04:06,08
+If you don't currently use comprehension,
+
+78
+00:04:06,08 --> 00:04:08,01
+I'm sure that if you try them
+
+79
+00:04:08,01 --> 00:04:10,00
+you'll become addicted quickly.
+
+80
+00:04:10,00 --> 00:04:11,04
+And you'll start doing all sorts
+
+81
+00:04:11,04 --> 00:04:15,05
+of acrobatics, such as nested looping comprehensions.
+
+82
+00:04:15,05 --> 00:04:20,01
+For instance, look at this nested loop,
+
+83
+00:04:20,01 --> 00:04:21,05
+which creates a list of one,
+
+84
+00:04:21,05 --> 00:04:23,01
+one two, one two three,
+
+85
+00:04:23,01 --> 00:04:25,06
+one two three four, and so on.
+
+86
+00:04:25,06 --> 00:04:28,01
+We can do the same with a nested comprehension
+
+87
+00:04:28,01 --> 00:04:29,08
+just by writing the two loops
+
+88
+00:04:29,08 --> 00:04:34,03
+in the same order in sequence.
+
+89
+00:04:34,03 --> 00:04:36,05
+Comprehensions are incredibly useful
+
+90
+00:04:36,05 --> 00:04:40,03
+to manipulate lists, dicts, and data.
+
+91
+00:04:40,03 --> 00:04:41,09
+You should be familiar with both,
+
+92
+00:04:41,09 --> 00:04:44,00
+understanding and writing them.
+

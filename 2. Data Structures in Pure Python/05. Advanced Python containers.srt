@@ -1,0 +1,588 @@
+1
+00:00:00,05 --> 00:00:02,07
+- [Instructor] As I mentioned in the video about sequences,
+
+2
+00:00:02,07 --> 00:00:05,03
+tuples are similar to lists,
+
+3
+00:00:05,03 --> 00:00:08,08
+but we cannot change the arguments after creating the tuple.
+
+4
+00:00:08,08 --> 00:00:12,06
+The formal way of saying that is that tuples are immutable.
+
+5
+00:00:12,06 --> 00:00:15,08
+Tuples are very useful to store data records
+
+6
+00:00:15,08 --> 00:00:19,01
+when we think that we are not going to modify the values.
+
+7
+00:00:19,01 --> 00:00:22,04
+For instance, a list of people with their first names,
+
+8
+00:00:22,04 --> 00:00:25,00
+last names, and birthdays.
+
+9
+00:00:25,00 --> 00:00:27,05
+For each element in this list, for each person,
+
+10
+00:00:27,05 --> 00:00:31,01
+we access the data fields by index.
+
+11
+00:00:31,01 --> 00:00:35,04
+Zero for the name, one for the family name.
+
+12
+00:00:35,04 --> 00:00:39,03
+This lets us write useful list comprehensions.
+
+13
+00:00:39,03 --> 00:00:41,00
+For instance, to find all the people
+
+14
+00:00:41,00 --> 00:00:43,02
+with a given birthday.
+
+15
+00:00:43,02 --> 00:00:46,08
+We loop over every person in People,
+
+16
+00:00:46,08 --> 00:00:49,06
+and for each we check if the third element
+
+17
+00:00:49,06 --> 00:00:53,03
+of the tuple, index two, is July 15.
+
+18
+00:00:53,03 --> 00:00:56,02
+I share a birthday with a very famous astronomer,
+
+19
+00:00:56,02 --> 00:00:58,04
+Jocelyn Bell Burnell.
+
+20
+00:00:58,04 --> 00:01:00,08
+Field access by index means that
+
+21
+00:01:00,08 --> 00:01:02,09
+we have to remember which is which,
+
+22
+00:01:02,09 --> 00:01:04,06
+creating the potential for bugs,
+
+23
+00:01:04,06 --> 00:01:09,01
+and certainly reducing the expressiveness of our code.
+
+24
+00:01:09,01 --> 00:01:12,00
+To help us out, the module Collections
+
+25
+00:01:12,00 --> 00:01:14,04
+in the standard Python library offers
+
+26
+00:01:14,04 --> 00:01:19,03
+a name tuple that lets you create a specialized object,
+
+27
+00:01:19,03 --> 00:01:22,03
+a specialized tuple, that has a name and that
+
+28
+00:01:22,03 --> 00:01:25,05
+associates labels with fields.
+
+29
+00:01:25,05 --> 00:01:29,00
+For instance, a person type would be called Person
+
+30
+00:01:29,00 --> 00:01:33,06
+and have fields first name, last name, and birthday.
+
+31
+00:01:33,06 --> 00:01:37,04
+We can then create instances of the Name tuple
+
+32
+00:01:37,04 --> 00:01:42,05
+by using the type and giving the field values sequentially.
+
+33
+00:01:42,05 --> 00:01:44,07
+Or we can even use the field names,
+
+34
+00:01:44,07 --> 00:01:52,07
+which lets us shuffle the fields if we need to.
+
+35
+00:01:52,07 --> 00:01:57,02
+Name tuples have the advantage that they print nicely.
+
+36
+00:01:57,02 --> 00:02:00,01
+Now let's look at accessing the fields.
+
+37
+00:02:00,01 --> 00:02:03,00
+Indices still work.
+
+38
+00:02:03,00 --> 00:02:05,01
+So we get a zero, one and two gives me
+
+39
+00:02:05,01 --> 00:02:08,07
+first name, last name, and birthday.
+
+40
+00:02:08,07 --> 00:02:12,05
+But field names using the object-oriented DOS syntax
+
+41
+00:02:12,05 --> 00:02:15,03
+are now what we're going to use,
+
+42
+00:02:15,03 --> 00:02:20,08
+because they make our intentions clear in the code we write.
+
+43
+00:02:20,08 --> 00:02:24,07
+Let's convert our little database to name tuples.
+
+44
+00:02:24,07 --> 00:02:26,08
+We can't use a standard tuple directly
+
+45
+00:02:26,08 --> 00:02:30,04
+and feed it person type, because person type
+
+46
+00:02:30,04 --> 00:02:32,03
+needs three arguments.
+
+47
+00:02:32,03 --> 00:02:35,08
+Here, Python is complaining that two are missing.
+
+48
+00:02:35,08 --> 00:02:39,08
+So this is a case where tuple unpacking comes useful.
+
+49
+00:02:39,08 --> 00:02:46,07
+I use a star to unpack tuple zero into its three elements.
+
+50
+00:02:46,07 --> 00:02:49,03
+To do all of them, we will, of course,
+
+51
+00:02:49,03 --> 00:02:52,00
+use a list comprehension.
+
+52
+00:02:52,00 --> 00:02:58,00
+Now our birthday search reads better.
+
+53
+00:02:58,00 --> 00:03:00,02
+It shows me explicitly that I'm looking at
+
+54
+00:03:00,02 --> 00:03:03,05
+the birthday field of each tuple.
+
+55
+00:03:03,05 --> 00:03:06,03
+Python 3.7 introduced an alternative
+
+56
+00:03:06,03 --> 00:03:11,06
+to tuples index for storing data records, data classes.
+
+57
+00:03:11,06 --> 00:03:14,03
+To use them, we need to import data class
+
+58
+00:03:14,03 --> 00:03:16,09
+from the data classes module.
+
+59
+00:03:16,09 --> 00:03:19,04
+If you are for some reason in Python 3.6,
+
+60
+00:03:19,04 --> 00:03:21,03
+you can still use data classes,
+
+61
+00:03:21,03 --> 00:03:24,06
+but you need to install them explicitly as a package.
+
+62
+00:03:24,06 --> 00:03:28,02
+For instance, with PIP Install.
+
+63
+00:03:28,02 --> 00:03:30,07
+So I do my import, and this is how we would
+
+64
+00:03:30,07 --> 00:03:34,03
+set up a personal record with first name, a string,
+
+65
+00:03:34,03 --> 00:03:37,00
+last name, a string, and a birthday,
+
+66
+00:03:37,00 --> 00:03:38,05
+and say again a string,
+
+67
+00:03:38,05 --> 00:03:41,06
+with the default value for the birthday.
+
+68
+00:03:41,06 --> 00:03:44,08
+If you're not familiar with Python classes,
+
+69
+00:03:44,08 --> 00:03:50,00
+class decorators, the At data class that appears at the top,
+
+70
+00:03:50,00 --> 00:03:52,08
+and if you're not familiar with that annotation
+
+71
+00:03:52,08 --> 00:03:55,06
+the syntax will look somewhat alien.
+
+72
+00:03:55,06 --> 00:03:57,07
+But basically, we're instructing Python
+
+73
+00:03:57,07 --> 00:04:00,05
+to create the type of records that will have fields
+
+74
+00:04:00,05 --> 00:04:03,05
+called first name, last name, and birthday,
+
+75
+00:04:03,05 --> 00:04:06,07
+all of which will be strings.
+
+76
+00:04:06,07 --> 00:04:09,07
+We'll create an instance of this class, a person,
+
+77
+00:04:09,07 --> 00:04:16,05
+making the fields sequentially or by keywords.
+
+78
+00:04:16,05 --> 00:04:19,00
+You see here that the field of that known birthday
+
+79
+00:04:19,00 --> 00:04:21,01
+is applied, since I didn't provide a birthday
+
+80
+00:04:21,01 --> 00:04:23,07
+to the definition.
+
+81
+00:04:23,07 --> 00:04:27,09
+We can access the field by name but not by index.
+
+82
+00:04:27,09 --> 00:04:31,08
+And again, the data class prints nicely.
+
+83
+00:04:31,08 --> 00:04:33,05
+In contrast to name tuple,
+
+84
+00:04:33,05 --> 00:04:36,01
+data classes are full Python classes,
+
+85
+00:04:36,01 --> 00:04:39,00
+so we can define methods that operate on the fields,
+
+86
+00:04:39,00 --> 00:04:43,00
+such as a method that returns a person's full name.
+
+87
+00:04:43,00 --> 00:04:44,04
+If you're not familiar with object-oriented
+
+88
+00:04:44,04 --> 00:04:46,07
+programming in Python, do not worry.
+
+89
+00:04:46,07 --> 00:04:51,04
+We will not need this feature in what follows.
+
+90
+00:04:51,04 --> 00:04:53,08
+Nevertheless, for person class two,
+
+91
+00:04:53,08 --> 00:04:57,05
+calling full name as a method runs the code that we wrote
+
+92
+00:04:57,05 --> 00:05:00,09
+and returns my full name.
+
+93
+00:05:00,09 --> 00:05:03,03
+Data classes have many other useful features,
+
+94
+00:05:03,03 --> 00:05:06,02
+such as freezing, disallowing modifications,
+
+95
+00:05:06,02 --> 00:05:10,01
+ordering, allowing the comparison of class instances,
+
+96
+00:05:10,01 --> 00:05:13,07
+defining data classes by inheritance, and a lot more.
+
+97
+00:05:13,07 --> 00:05:16,03
+So I encourage you to learn more about them
+
+98
+00:05:16,03 --> 00:05:17,09
+if you are somewhat familiar with
+
+99
+00:05:17,09 --> 00:05:19,05
+object-oriented programming
+
+100
+00:05:19,05 --> 00:05:23,08
+and specifically classes in Python.
+
+101
+00:05:23,08 --> 00:05:25,06
+Now we move on to our last topic
+
+102
+00:05:25,06 --> 00:05:28,00
+about data extractions in Python.
+
+103
+00:05:28,00 --> 00:05:30,02
+In a video about dict, I discussed how
+
+104
+00:05:30,02 --> 00:05:31,08
+a special variant of dictionary,
+
+105
+00:05:31,08 --> 00:05:35,02
+collections order dict, is now much less useful
+
+106
+00:05:35,02 --> 00:05:38,02
+because the standard dict preserves the order
+
+107
+00:05:38,02 --> 00:05:40,08
+in which elements were inserted.
+
+108
+00:05:40,08 --> 00:05:43,09
+There's another variant of dict that remains useful,
+
+109
+00:05:43,09 --> 00:05:46,06
+collections default dict.
+
+110
+00:05:46,06 --> 00:05:49,09
+The point here is to define a default for values
+
+111
+00:05:49,09 --> 00:05:52,02
+that will be returned if we ask for a key
+
+112
+00:05:52,02 --> 00:05:55,02
+for which there was no entry.
+
+113
+00:05:55,02 --> 00:05:57,06
+More precisely, we have to provide a function
+
+114
+00:05:57,06 --> 00:06:00,08
+that returns that default.
+
+115
+00:06:00,08 --> 00:06:05,02
+Let me write out the function that we will use.
+
+116
+00:06:05,02 --> 00:06:14,03
+We'll call it mydefault, and it will return a simple string.
+
+117
+00:06:14,03 --> 00:06:17,00
+So here's my default dict.
+
+118
+00:06:17,00 --> 00:06:20,08
+If I go in and ask for a key that doesn't exist yet,
+
+119
+00:06:20,08 --> 00:06:23,07
+I will just get the default back.
+
+120
+00:06:23,07 --> 00:06:30,03
+Not only, that key will be now part of the dictionary.
+
+121
+00:06:30,03 --> 00:06:33,02
+This makes default dict useful
+
+122
+00:06:33,02 --> 00:06:35,04
+when we want to build a dictionary
+
+123
+00:06:35,04 --> 00:06:39,07
+where each key can correspond to a list of items.
+
+124
+00:06:39,07 --> 00:06:43,04
+Let's make an example based on birthdays.
+
+125
+00:06:43,04 --> 00:06:46,00
+With standard dict, we need to write code
+
+126
+00:06:46,00 --> 00:06:48,03
+that behaves differently if the birthday
+
+127
+00:06:48,03 --> 00:06:51,03
+has been seen already, and then we can append
+
+128
+00:06:51,03 --> 00:06:53,08
+to the list of people with the same birthday
+
+129
+00:06:53,08 --> 00:06:57,07
+or if the birthday has not been seen,
+
+130
+00:06:57,07 --> 00:07:02,09
+in which case we need to create a list with one element.
+
+131
+00:07:02,09 --> 00:07:05,00
+That is quite inconvenient.
+
+132
+00:07:05,00 --> 00:07:08,07
+The repetition of code is annoying and prone to bugs.
+
+133
+00:07:08,07 --> 00:07:11,04
+We'll use the full dict instead,
+
+134
+00:07:11,04 --> 00:07:13,01
+and we will take advantage of the fact
+
+135
+00:07:13,01 --> 00:07:17,07
+that list called as a function returns the empty list.
+
+136
+00:07:17,07 --> 00:07:20,09
+So we can use it to provide a default.
+
+137
+00:07:20,09 --> 00:07:22,09
+Thus, we can write birthdays
+
+138
+00:07:22,09 --> 00:07:25,04
+as collection_defaultdict
+
+139
+00:07:25,04 --> 00:07:28,09
+with list as the default maker,
+
+140
+00:07:28,09 --> 00:07:33,06
+and then simply look over person in our name tuple
+
+141
+00:07:33,06 --> 00:07:37,05
+and constraint to get in that key the birthday
+
+142
+00:07:37,05 --> 00:07:41,07
+and appending to the resulting list.
+
+143
+00:07:41,07 --> 00:07:44,01
+There are more useful container types
+
+144
+00:07:44,01 --> 00:07:47,00
+in the standard library module collections.
+
+145
+00:07:47,00 --> 00:07:48,06
+I encourage you to look them up
+
+146
+00:07:48,06 --> 00:07:50,09
+and to use them in your work instead of
+
+147
+00:07:50,09 --> 00:07:54,00
+reinventing those wheels.
+

@@ -1,0 +1,188 @@
+1
+00:00:00,06 --> 00:00:01,07
+- [Narrator] For this course,
+
+2
+00:00:01,07 --> 00:00:04,05
+we need an up to date installation of python three.
+
+3
+00:00:04,05 --> 00:00:06,09
+And a few third party packages.
+
+4
+00:00:06,09 --> 00:00:10,01
+Including jupyter notebook, numpy, pandas,
+
+5
+00:00:10,01 --> 00:00:12,05
+and matplotlib.
+
+6
+00:00:12,05 --> 00:00:15,00
+In this video, I show you how to install everything
+
+7
+00:00:15,00 --> 00:00:17,02
+you need on Windows.
+
+8
+00:00:17,02 --> 00:00:20,05
+However, you can also experiment with Python in the cloud
+
+9
+00:00:20,05 --> 00:00:23,05
+from your web browser.
+
+10
+00:00:23,05 --> 00:00:27,01
+I explain how to do so at the end of this chapter.
+
+11
+00:00:27,01 --> 00:00:30,05
+If you are already using Python on your machine
+
+12
+00:00:30,05 --> 00:00:32,08
+and you know how to install extra packages,
+
+13
+00:00:32,08 --> 00:00:34,07
+you are free to do so.
+
+14
+00:00:34,07 --> 00:00:37,05
+Otherwise, I suggest you follow me
+
+15
+00:00:37,05 --> 00:00:41,04
+and install the free Anaconda Python distribution.
+
+16
+00:00:41,04 --> 00:00:44,02
+Which includes everything that we need.
+
+17
+00:00:44,02 --> 00:00:48,03
+To install, we go to the anaconda.com website,
+
+18
+00:00:48,03 --> 00:00:55,01
+we find a download link on the top.
+
+19
+00:00:55,01 --> 00:00:57,09
+Verify that we have the right platform.
+
+20
+00:00:57,09 --> 00:01:01,07
+And then download the 64 bit graphical installer.
+
+21
+00:01:01,07 --> 00:01:04,00
+This is currently at version 3.7,
+
+22
+00:01:04,00 --> 00:01:08,09
+but any later version will also work fine.
+
+23
+00:01:08,09 --> 00:01:10,09
+Once the download has completed,
+
+24
+00:01:10,09 --> 00:01:17,01
+we click on installer and proceed through an installation.
+
+25
+00:01:17,01 --> 00:01:19,06
+This requires a few clicks.
+
+26
+00:01:19,06 --> 00:01:27,03
+(mouse clicks)
+
+27
+00:01:27,03 --> 00:01:31,09
+As of January 2020, Python two is no longer supported.
+
+28
+00:01:31,09 --> 00:01:34,03
+So you should definitely be using version three.
+
+29
+00:01:34,03 --> 00:01:37,02
+Which is mature, efficient, and introduces
+
+30
+00:01:37,02 --> 00:01:42,03
+many exciting new features compared to version two.
+
+31
+00:01:42,03 --> 00:01:52,02
+The final phase of the installation takes a few minutes.
+
+32
+00:01:52,02 --> 00:01:54,03
+It looks like the setup is finished,
+
+33
+00:01:54,03 --> 00:01:57,04
+and we now can get started with Python.
+
+34
+00:01:57,04 --> 00:02:00,03
+We can now try out our new Python
+
+35
+00:02:00,03 --> 00:02:04,06
+by opening up the Anaconda prompt,
+
+36
+00:02:04,06 --> 00:02:07,07
+and typing python.
+
+37
+00:02:07,07 --> 00:02:10,06
+This gets us into the standard python shell,
+
+38
+00:02:10,06 --> 00:02:13,08
+where we can write and execute code interactively.
+
+39
+00:02:13,08 --> 00:02:16,03
+The prompt, informs us that this is indeed
+
+40
+00:02:16,03 --> 00:02:20,06
+the Anaconda version of Python 3.7
+
+41
+00:02:20,06 --> 00:02:26,00
+It's traditional to say hello.
+
+42
+00:02:26,00 --> 00:02:29,05
+We can also verify that all the packages that we need
+
+43
+00:02:29,05 --> 00:02:34,05
+are already installed by attempt to import them.
+
+44
+00:02:34,05 --> 00:02:45,00
+Numpy, pandas, and matplotlib.
+
+45
+00:02:45,00 --> 00:02:47,09
+No news is good news.
+
+46
+00:02:47,09 --> 00:02:49,00
+All done.
+
+47
+00:02:49,00 --> 00:02:52,00
+We are now ready to start experimenting with python.
+

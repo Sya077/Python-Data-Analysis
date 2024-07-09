@@ -1,0 +1,392 @@
+1
+00:00:00,05 --> 00:00:01,07
+- [Instructor] The easiest way to get
+
+2
+00:00:01,07 --> 00:00:05,01
+a NumPy array is to load it from a file.
+
+3
+00:00:05,01 --> 00:00:07,03
+NumPy recognizes several file formats,
+
+4
+00:00:07,03 --> 00:00:11,01
+including, of course, simple text files.
+
+5
+00:00:11,01 --> 00:00:12,08
+I have prepared one for you
+
+6
+00:00:12,08 --> 00:00:15,03
+that describes a very well-known painting.
+
+7
+00:00:15,03 --> 00:00:18,05
+The file is called monalisa.txt
+
+8
+00:00:18,05 --> 00:00:20,08
+and it's included in your exercise files
+
+9
+00:00:20,08 --> 00:00:23,08
+in the same directory as this notebook.
+
+10
+00:00:23,08 --> 00:00:27,04
+Let's have a look at the content.
+
+11
+00:00:27,04 --> 00:00:30,08
+We open the file with open in reading mode,
+
+12
+00:00:30,08 --> 00:00:33,00
+and we use the readlines method
+
+13
+00:00:33,00 --> 00:00:37,00
+to get all the lines of the file.
+
+14
+00:00:37,00 --> 00:00:39,00
+So we see that we have 200 lines
+
+15
+00:00:39,00 --> 00:00:42,03
+and that each line is a sequence of integers.
+
+16
+00:00:42,03 --> 00:00:48,08
+NumPy loads the file without any trouble using loadtxt.
+
+17
+00:00:48,08 --> 00:00:51,03
+The result is a two-dimensional array.
+
+18
+00:00:51,03 --> 00:00:54,05
+If we display it, NumPy omits some rows and columns
+
+19
+00:00:54,05 --> 00:00:56,07
+so it fits on the screen.
+
+20
+00:00:56,07 --> 00:00:59,07
+We can query the object, the array,
+
+21
+00:00:59,07 --> 00:01:03,00
+for the number of dimensions, which are two,
+
+22
+00:01:03,00 --> 00:01:08,04
+the shape, which is 200 by 134,
+
+23
+00:01:08,04 --> 00:01:11,06
+200 rows by 134 columns,
+
+24
+00:01:11,06 --> 00:01:13,08
+the total number of elements,
+
+25
+00:01:13,08 --> 00:01:16,05
+and the type of element.
+
+26
+00:01:16,05 --> 00:01:18,08
+In this case it's the very common 64 bit
+
+27
+00:01:18,08 --> 00:01:21,05
+floating point number.
+
+28
+00:01:21,05 --> 00:01:25,04
+Okay, so we have a two-dimensional array called monalisa.
+
+29
+00:01:25,04 --> 00:01:29,04
+I wonder, is it an image that we can display?
+
+30
+00:01:29,04 --> 00:01:32,02
+We can use the Matplotlib function imshow
+
+31
+00:01:32,02 --> 00:01:37,08
+to display two-dimensional arrays as images.
+
+32
+00:01:37,08 --> 00:01:40,03
+Although, we should perhaps use a better column map,
+
+33
+00:01:40,03 --> 00:01:43,09
+such as gray.
+
+34
+00:01:43,09 --> 00:01:46,06
+I've also prepared a colored version of the painting
+
+35
+00:01:46,06 --> 00:01:50,07
+and I have saved it in NumPy's native binary format,
+
+36
+00:01:50,07 --> 00:01:53,05
+which works across all platforms.
+
+37
+00:01:53,05 --> 00:01:57,09
+The file is monalisa.mpy.
+
+38
+00:01:57,09 --> 00:02:00,03
+This is now a three-dimensional array,
+
+39
+00:02:00,03 --> 00:02:02,00
+where the last dimension is used to store
+
+40
+00:02:02,00 --> 00:02:05,01
+red, green and blue components.
+
+41
+00:02:05,01 --> 00:02:09,07
+Imshow understands this without any problem.
+
+42
+00:02:09,07 --> 00:02:13,03
+We have lots of pixels, so we can make the image bigger
+
+43
+00:02:13,03 --> 00:02:17,04
+by instructing Matplotlib to have a larger figure size.
+
+44
+00:02:17,04 --> 00:02:19,04
+Five by eight refers to inches,
+
+45
+00:02:19,04 --> 00:02:21,03
+although how that turns out in pixels
+
+46
+00:02:21,03 --> 00:02:24,03
+depend on the resolution of your screen.
+
+47
+00:02:24,03 --> 00:02:26,02
+We now know how to load the NumPy array.
+
+48
+00:02:26,02 --> 00:02:28,08
+How about making one ourselves?
+
+49
+00:02:28,08 --> 00:02:31,01
+The easiest way is to take a Python list
+
+50
+00:02:31,01 --> 00:02:36,00
+or a nested list of lists and pass it to NumPy array.
+
+51
+00:02:36,00 --> 00:02:40,02
+The data type is automatically set.
+
+52
+00:02:40,02 --> 00:02:44,04
+And we can query the object as we did before.
+
+53
+00:02:44,04 --> 00:02:45,09
+Another common way to create
+
+54
+00:02:45,09 --> 00:02:48,04
+an array is to make an empty one.
+
+55
+00:02:48,04 --> 00:02:51,04
+We give the shape and the data type.
+
+56
+00:02:51,04 --> 00:02:55,02
+For instance, we can do a one-dimensional array
+
+57
+00:02:55,02 --> 00:02:58,04
+a vector of length eight.
+
+58
+00:02:58,04 --> 00:03:05,02
+Here d is just a shorthand for a float 64, an 8-byte float.
+
+59
+00:03:05,02 --> 00:03:09,01
+We can do a two-dimensional array, a matrix.
+
+60
+00:03:09,01 --> 00:03:12,09
+And we can query these objects for their metadata,
+
+61
+00:03:12,09 --> 00:03:16,00
+and plot them on the same line.
+
+62
+00:03:16,00 --> 00:03:19,01
+It is sometimes useful to make an array of zeros
+
+63
+00:03:19,01 --> 00:03:21,05
+in the shape of another existing array.
+
+64
+00:03:21,05 --> 00:03:24,06
+That's done with zeroes_like.
+
+65
+00:03:24,06 --> 00:03:27,01
+Otherwise, we can make a really empty array.
+
+66
+00:03:27,01 --> 00:03:30,02
+Here, the memory is allocated, but not even cleaned,
+
+67
+00:03:30,02 --> 00:03:33,08
+so we get some nonsensical values.
+
+68
+00:03:33,08 --> 00:03:36,03
+We can also create a regularly spaced array
+
+69
+00:03:36,03 --> 00:03:40,04
+of number with linspace with specified extrema,
+
+70
+00:03:40,04 --> 00:03:42,05
+for instance, zero and one,
+
+71
+00:03:42,05 --> 00:03:47,05
+and the total number of elements, here 16.
+
+72
+00:03:47,05 --> 00:03:50,01
+We can't show a one-dimensional array as an image,
+
+73
+00:03:50,01 --> 00:03:53,09
+but we can certainly plot it with Matplotlib.
+
+74
+00:03:53,09 --> 00:03:55,05
+Here, I will use a thick marker
+
+75
+00:03:55,05 --> 00:03:59,06
+as specified by lowercase o.
+
+76
+00:03:59,06 --> 00:04:01,03
+Instead of choosing the number of elements
+
+77
+00:04:01,03 --> 00:04:04,06
+between two extrema as we did with linspace,
+
+78
+00:04:04,06 --> 00:04:08,00
+we can use NumPy arange, which has the same convention
+
+79
+00:04:08,00 --> 00:04:11,02
+as Python's built-in range.
+
+80
+00:04:11,02 --> 00:04:12,07
+In this case, we have elements
+
+81
+00:04:12,07 --> 00:04:17,05
+between zero and 1.5 spaced by 0.1.
+
+82
+00:04:17,05 --> 00:04:20,08
+NumPy can also give us an array of random numbers.
+
+83
+00:04:20,08 --> 00:04:23,04
+We just need to specify the shape.
+
+84
+00:04:23,04 --> 00:04:26,04
+By default, we get numbers uniformly distributed
+
+85
+00:04:26,04 --> 00:04:29,05
+between zero and one.
+
+86
+00:04:29,05 --> 00:04:34,01
+If we plot them with color, they look suitably random.
+
+87
+00:04:34,01 --> 00:04:39,04
+We could also use random.randint and NumPy random.randn
+
+88
+00:04:39,04 --> 00:04:42,05
+to get either integers in a given range
+
+89
+00:04:42,05 --> 00:04:45,09
+or normally distributed numbers.
+
+90
+00:04:45,09 --> 00:04:47,09
+To close this video, let me show you
+
+91
+00:04:47,09 --> 00:04:50,06
+how to save an array to a file.
+
+92
+00:04:50,06 --> 00:04:54,09
+Np.save will create a cross-platform binary file.
+
+93
+00:04:54,09 --> 00:04:58,01
+The file ending is conventionally .mpy,
+
+94
+00:04:58,01 --> 00:05:00,02
+but it doesn't need to be.
+
+95
+00:05:00,02 --> 00:05:05,04
+Numpy savetext, instead, will create a readable ASCII table.
+
+96
+00:05:05,04 --> 00:05:10,00
+And if we load it, we see that it's all there.
+
+97
+00:05:10,00 --> 00:05:12,00
+Now that we've created our arrays,
+
+98
+00:05:12,00 --> 00:05:14,00
+let's see what we can do with them.
+

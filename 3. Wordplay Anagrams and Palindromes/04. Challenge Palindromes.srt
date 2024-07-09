@@ -1,0 +1,64 @@
+1
+00:00:00,01 --> 00:00:05,06
+(bright electronic music)
+
+2
+00:00:05,06 --> 00:00:07,01
+- [Instructor] For your challenge,
+
+3
+00:00:07,01 --> 00:00:09,05
+you should extend the anagram machinery
+
+4
+00:00:09,05 --> 00:00:13,08
+that we built together to find all palindromic pairs
+
+5
+00:00:13,08 --> 00:00:16,05
+of words in the English language,
+
+6
+00:00:16,05 --> 00:00:18,08
+or at least, in our dictionary.
+
+7
+00:00:18,08 --> 00:00:21,04
+That is, you should find pairs of words
+
+8
+00:00:21,04 --> 00:00:24,00
+that become each other when we reverse
+
+9
+00:00:24,00 --> 00:00:25,09
+the order of their letters.
+
+10
+00:00:25,09 --> 00:00:29,05
+For instance, reward and drawer.
+
+11
+00:00:29,05 --> 00:00:33,08
+That will also include true palindromes, such as radar,
+
+12
+00:00:33,08 --> 00:00:37,03
+where the reverse of the word is the word itself.
+
+13
+00:00:37,03 --> 00:00:41,01
+I'll give you a hint, to reverse a string,
+
+14
+00:00:41,01 --> 00:00:42,02
+go back to what we learned
+
+15
+00:00:42,02 --> 00:00:45,08
+about slicing sequences in Python.
+
+16
+00:00:45,08 --> 00:00:49,00
+This challenge should take you 10 minutes.
+

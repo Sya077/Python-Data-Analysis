@@ -1,0 +1,568 @@
+1
+00:00:00,05 --> 00:00:01,08
+- [Instructor] We have seen how to load
+
+2
+00:00:01,08 --> 00:00:04,09
+and create data frames, and how to select records
+
+3
+00:00:04,09 --> 00:00:07,07
+or ranges of records, but we have not done much
+
+4
+00:00:07,07 --> 00:00:10,01
+with the values in the tables.
+
+5
+00:00:10,01 --> 00:00:12,05
+In many data analysis tasks, you're interested
+
+6
+00:00:12,05 --> 00:00:15,03
+in running computations with the columns
+
+7
+00:00:15,03 --> 00:00:17,04
+and then making plots.
+
+8
+00:00:17,04 --> 00:00:20,03
+Let's try that with Pandas.
+
+9
+00:00:20,03 --> 00:00:21,06
+We'll load the data set consisting
+
+10
+00:00:21,06 --> 00:00:25,08
+of global population health and wealth statistics,
+
+11
+00:00:25,08 --> 00:00:29,05
+from the amazing Gapminder website.
+
+12
+00:00:29,05 --> 00:00:32,02
+Gapminder is a Swedish foundation created
+
+13
+00:00:32,02 --> 00:00:36,03
+by the late Hans Rosling to promote a fact-based worldview
+
+14
+00:00:36,03 --> 00:00:40,05
+and to fight misconceptions about global development.
+
+15
+00:00:40,05 --> 00:00:43,01
+If you want to make plots in the Gapminder style
+
+16
+00:00:43,01 --> 00:00:45,09
+internalize their data in some depth,
+
+17
+00:00:45,09 --> 00:00:48,00
+you can try my LinkedIn learning course,
+
+18
+00:00:48,00 --> 00:00:51,03
+Python Statistics Essential Training.
+
+19
+00:00:51,03 --> 00:00:53,06
+In this video we'll do simpler things
+
+20
+00:00:53,06 --> 00:00:55,08
+but still learn a lot.
+
+21
+00:00:55,08 --> 00:01:00,03
+So we load the comma-separated file.
+
+22
+00:01:00,03 --> 00:01:02,09
+And we see that the data set includes a number
+
+23
+00:01:02,09 --> 00:01:05,03
+of global statistics.
+
+24
+00:01:05,03 --> 00:01:08,06
+Each row identifies a country, a year,
+
+25
+00:01:08,06 --> 00:01:11,06
+the corresponding region, and then they count us
+
+26
+00:01:11,06 --> 00:01:15,06
+population, life expectancy, the percentage
+
+27
+00:01:15,06 --> 00:01:19,03
+of children born alive who survive to age five,
+
+28
+00:01:19,03 --> 00:01:22,06
+the average number of babies per fertile woman
+
+29
+00:01:22,06 --> 00:01:29,08
+and the domestic product per person in 2011 dollars.
+
+30
+00:01:29,08 --> 00:01:33,02
+We can ask Pandas to compute single statistics
+
+31
+00:01:33,02 --> 00:01:35,09
+on all the fields.
+
+32
+00:01:35,09 --> 00:01:39,03
+We do that with data frame describe.
+
+33
+00:01:39,03 --> 00:01:42,09
+We see that there are almost 15,000 records
+
+34
+00:01:42,09 --> 00:01:47,09
+in the data set for years ranging from 1800 to 2015.
+
+35
+00:01:47,09 --> 00:01:50,03
+We can read off the minimum, maximum, mean,
+
+36
+00:01:50,03 --> 00:01:52,05
+and standard deviation for all the fields
+
+37
+00:01:52,05 --> 00:01:57,08
+as well as the 25th, 50th, and 75th percentiles.
+
+38
+00:01:57,08 --> 00:01:59,09
+If you don't know about these don't worry.
+
+39
+00:01:59,09 --> 00:02:02,01
+They give us an idea of the typical values
+
+40
+00:02:02,01 --> 00:02:05,08
+and typical range of variation of a quantity.
+
+41
+00:02:05,08 --> 00:02:09,00
+One of the points that Gapminder makes to great effect
+
+42
+00:02:09,00 --> 00:02:13,01
+is that life expectancy improves with wealth,
+
+43
+00:02:13,01 --> 00:02:17,02
+the Gross Domestic Product per person, GDP,
+
+44
+00:02:17,02 --> 00:02:19,04
+and that the correlation is even clear
+
+45
+00:02:19,04 --> 00:02:24,07
+if we look at the logarithm of the GDP per person per day.
+
+46
+00:02:24,07 --> 00:02:27,02
+We don't have a column with that information,
+
+47
+00:02:27,02 --> 00:02:29,06
+but it's very easy to compute it and to store
+
+48
+00:02:29,06 --> 00:02:32,07
+it in a new data frame column.
+
+49
+00:02:32,07 --> 00:02:35,04
+So we divide GDP per capita by the average number
+
+50
+00:02:35,04 --> 00:02:39,05
+of days in a year, apply a non-pi log 10,
+
+51
+00:02:39,05 --> 00:02:42,07
+and store that in a new column which then appears
+
+52
+00:02:42,07 --> 00:02:46,01
+in the data frame.
+
+53
+00:02:46,01 --> 00:02:49,01
+To see global trends as a function of time
+
+54
+00:02:49,01 --> 00:02:51,00
+or to examine individual countries,
+
+55
+00:02:51,00 --> 00:02:56,09
+it makes sense to index by year and then country.
+
+56
+00:02:56,09 --> 00:02:59,06
+We will have two versions of the data frame
+
+57
+00:02:59,06 --> 00:03:02,08
+with those two indices.
+
+58
+00:03:02,08 --> 00:03:05,04
+Pandas has its own plotting interface
+
+59
+00:03:05,04 --> 00:03:09,04
+which focuses on choosing the variables with which to plot.
+
+60
+00:03:09,04 --> 00:03:12,02
+Say for instance we want to show life expectancy
+
+61
+00:03:12,02 --> 00:03:15,00
+is a function of log GDP.
+
+62
+00:03:15,00 --> 00:03:18,08
+So we select data for 1960 with dot log,
+
+63
+00:03:18,08 --> 00:03:22,06
+and then generate a scatter plot of those two variables,
+
+64
+00:03:22,06 --> 00:03:27,05
+it's sufficient to give the column names to Pandas.
+
+65
+00:03:27,05 --> 00:03:31,05
+If we want to compare a more recent year in the same plot,
+
+66
+00:03:31,05 --> 00:03:36,04
+we need to grab a map of lib axis object from the first plot
+
+67
+00:03:36,04 --> 00:03:38,09
+and then pass it to the second.
+
+68
+00:03:38,09 --> 00:03:40,08
+This is the kind of solution you find
+
+69
+00:03:40,08 --> 00:03:43,06
+on http://www.stackoverflow.com.
+
+70
+00:03:43,06 --> 00:03:45,01
+You should also change colors
+
+71
+00:03:45,01 --> 00:03:49,04
+and label the two clouds of points.
+
+72
+00:03:49,04 --> 00:03:51,03
+We see that in going between 1960
+
+73
+00:03:51,03 --> 00:03:55,08
+and 2015, the dots flatten towards the top,
+
+74
+00:03:55,08 --> 00:03:58,03
+towards higher life-expectancies.
+
+75
+00:03:58,03 --> 00:03:59,07
+Thanks to significant progress
+
+76
+00:03:59,07 --> 00:04:03,02
+in public health policy and practice.
+
+77
+00:04:03,02 --> 00:04:06,06
+The trend is the same for other statistical indicators
+
+78
+00:04:06,06 --> 00:04:10,06
+such as survival by age five.
+
+79
+00:04:10,06 --> 00:04:14,09
+The data frame index by country lets us make easy plots
+
+80
+00:04:14,09 --> 00:04:17,05
+of the chronological evolution of an indicator
+
+81
+00:04:17,05 --> 00:04:22,08
+such as life expectancy for a country such as Italy.
+
+82
+00:04:22,08 --> 00:04:24,05
+But the result is jumbled
+
+83
+00:04:24,05 --> 00:04:28,08
+if we don't first sort the values by year.
+
+84
+00:04:28,08 --> 00:04:32,05
+I'll do it here with sort values.
+
+85
+00:04:32,05 --> 00:04:37,02
+The style of coding where I concatenate one Pandas method
+
+86
+00:04:37,02 --> 00:04:41,05
+after the other is in fact quite idiomatic for Pandas,
+
+87
+00:04:41,05 --> 00:04:43,02
+if not for Python.
+
+88
+00:04:43,02 --> 00:04:45,03
+So when we say that Pandas speaks
+
+89
+00:04:45,03 --> 00:04:47,09
+its own Python dialect.
+
+90
+00:04:47,09 --> 00:04:52,00
+Here's a comparative plot for three countries.
+
+91
+00:04:52,00 --> 00:04:55,04
+Again we grab the math.lib axis and pass them
+
+92
+00:04:55,04 --> 00:04:59,06
+to the second or third plots.
+
+93
+00:04:59,06 --> 00:05:02,01
+We see that Italy caught up with the United States
+
+94
+00:05:02,01 --> 00:05:06,02
+in terms of life expectancy and China is coming close
+
+95
+00:05:06,02 --> 00:05:10,01
+after the disastrous 1960 famine.
+
+96
+00:05:10,01 --> 00:05:12,00
+Another interesting and important correlation
+
+97
+00:05:12,00 --> 00:05:16,07
+was between fertility rate and survival to age five.
+
+98
+00:05:16,07 --> 00:05:20,00
+To look at this question globally we can compute the average
+
+99
+00:05:20,00 --> 00:05:24,03
+fertility rate over all records,
+
+100
+00:05:24,03 --> 00:05:25,09
+that however doesn't mean much,
+
+101
+00:05:25,09 --> 00:05:29,09
+since it misses data from many years.
+
+102
+00:05:29,09 --> 00:05:32,04
+We can use the Panda's group by functionality
+
+103
+00:05:32,04 --> 00:05:34,05
+to segment the data frame by year
+
+104
+00:05:34,05 --> 00:05:36,07
+before computing the average.
+
+105
+00:05:36,07 --> 00:05:39,09
+The result is a series indexed by year
+
+106
+00:05:39,09 --> 00:05:44,08
+which shows the average fertility rate as a function of time
+
+107
+00:05:44,08 --> 00:05:47,04
+and we plot it against age five survival,
+
+108
+00:05:47,04 --> 00:05:50,04
+treated in the same fashion.
+
+109
+00:05:50,04 --> 00:05:53,07
+The Pandas plot allows us to add a second axis
+
+110
+00:05:53,07 --> 00:05:56,09
+on the right to show the range of the second variable
+
+111
+00:05:56,09 --> 00:05:59,02
+that we plot.
+
+112
+00:05:59,02 --> 00:06:02,01
+This shows forcefully that high natality
+
+113
+00:06:02,01 --> 00:06:04,04
+is a consequence of infant mortality,
+
+114
+00:06:04,04 --> 00:06:06,04
+and that women have many fewer children
+
+115
+00:06:06,04 --> 00:06:09,00
+when they believe they will survive.
+
+116
+00:06:09,00 --> 00:06:13,05
+On a small scale, we see that post 1950 baby boom.
+
+117
+00:06:13,05 --> 00:06:17,09
+To gain even more insight we can create a pivot table.
+
+118
+00:06:17,09 --> 00:06:21,01
+This segments the fertility means by both year
+
+119
+00:06:21,01 --> 00:06:24,03
+and geographical region.
+
+120
+00:06:24,03 --> 00:06:30,07
+Pandas is very happy to plot the resulting timelines.
+
+121
+00:06:30,07 --> 00:06:33,07
+The drop in fertility came after the baby boom
+
+122
+00:06:33,07 --> 00:06:36,01
+for Africa, America, and Asia.
+
+123
+00:06:36,01 --> 00:06:38,03
+Europe was already low and decreasing
+
+124
+00:06:38,03 --> 00:06:41,05
+since the beginning of the 20th century.
+
+125
+00:06:41,05 --> 00:06:45,08
+And here's the corresponding plot for age five survival.
+
+126
+00:06:45,08 --> 00:06:49,06
+Africa is now roughly where Europe was in 1950.
+
+127
+00:06:49,06 --> 00:06:53,01
+Using Pandas plotting functions is the quickest way
+
+128
+00:06:53,01 --> 00:06:56,08
+to make insightful statistical illustrations.
+
+129
+00:06:56,08 --> 00:06:58,03
+But for maximum flexibility,
+
+130
+00:06:58,03 --> 00:06:59,09
+you can always extract the values
+
+131
+00:06:59,09 --> 00:07:01,09
+from the frames as non-pras
+
+132
+00:07:01,09 --> 00:07:04,07
+and pass those to standard math.lib functions,
+
+133
+00:07:04,07 --> 00:07:07,06
+which are fully customizable.
+
+134
+00:07:07,06 --> 00:07:10,02
+There's a lot more you can do in Pandas,
+
+135
+00:07:10,02 --> 00:07:12,00
+and there's a lot more to learn
+
+136
+00:07:12,00 --> 00:07:13,01
+that I can cover in this course.
+
+137
+00:07:13,01 --> 00:07:14,05
+I try instead to give you a feel
+
+138
+00:07:14,05 --> 00:07:17,01
+for what is possible and practical.
+
+139
+00:07:17,01 --> 00:07:18,04
+I encourage you to start working
+
+140
+00:07:18,04 --> 00:07:20,07
+on a data set that interests you
+
+141
+00:07:20,07 --> 00:07:23,06
+and to pick up more techniques and knowledge
+
+142
+00:07:23,06 --> 00:07:26,00
+using the many resources available on the web.
+

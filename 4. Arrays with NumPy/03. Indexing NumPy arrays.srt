@@ -1,0 +1,420 @@
+1
+00:00:00,05 --> 00:00:02,00
+- [Instructor] Let's see how we can access
+
+2
+00:00:02,00 --> 00:00:06,00
+individual elements and ranges of elements in NumPy.
+
+3
+00:00:06,00 --> 00:00:09,03
+We will demonstrate on our good old friend Mona Lisa.
+
+4
+00:00:09,03 --> 00:00:12,05
+So let me load up the file.
+
+5
+00:00:12,05 --> 00:00:16,00
+I remind you, this is a three-dimensional NumPy array
+
+6
+00:00:16,00 --> 00:00:17,03
+with dimensions that correspond to
+
+7
+00:00:17,03 --> 00:00:22,02
+height 1198 pixels with 804,
+
+8
+00:00:22,02 --> 00:00:26,08
+and color three, for red, green and blue.
+
+9
+00:00:26,08 --> 00:00:30,01
+Imgshow shows us the picture.
+
+10
+00:00:30,01 --> 00:00:32,07
+The syntax to get that individual pixels
+
+11
+00:00:32,07 --> 00:00:36,06
+is just an extension of Python list indexing,
+
+12
+00:00:36,06 --> 00:00:38,00
+except that we can now include
+
+13
+00:00:38,00 --> 00:00:40,09
+multiple indices among brackets.
+
+14
+00:00:40,09 --> 00:00:43,02
+For instance, a point roughly in the middle
+
+15
+00:00:43,02 --> 00:00:47,04
+would be on row 600, column 400
+
+16
+00:00:47,04 --> 00:00:50,05
+and we grabbed the red component.
+
+17
+00:00:50,05 --> 00:00:52,06
+If we wish to go to the bottom right corner,
+
+18
+00:00:52,06 --> 00:00:55,03
+we may count back from the boundary of the array,
+
+19
+00:00:55,03 --> 00:00:58,03
+just that we would do for a list.
+
+20
+00:00:58,03 --> 00:00:59,09
+This should be the same as
+
+21
+00:00:59,09 --> 00:01:05,07
+1148, 754 and one.
+
+22
+00:01:05,07 --> 00:01:09,00
+If we try to index elements beyond the boundary,
+
+23
+00:01:09,00 --> 00:01:11,06
+we get an index error.
+
+24
+00:01:11,06 --> 00:01:14,04
+And of course, we can use indexing to assign values
+
+25
+00:01:14,04 --> 00:01:16,08
+to the elements.
+
+26
+00:01:16,08 --> 00:01:19,06
+Once you get used to multi-indexing like this,
+
+27
+00:01:19,06 --> 00:01:21,03
+you'll have the temptation of trying it
+
+28
+00:01:21,03 --> 00:01:22,09
+on nested Python lists,
+
+29
+00:01:22,09 --> 00:01:24,04
+but there it doesn't work.
+
+30
+00:01:24,04 --> 00:01:30,05
+So let me demonstrate with a rather uninspired list.
+
+31
+00:01:30,05 --> 00:01:33,00
+We cannot ask for element one comma two,
+
+32
+00:01:33,00 --> 00:01:36,01
+rather, we need to ask for list number one,
+
+33
+00:01:36,01 --> 00:01:39,00
+and then element two.
+
+34
+00:01:39,00 --> 00:01:42,04
+One more reason to like NumPy arrays.
+
+35
+00:01:42,04 --> 00:01:46,07
+Slicing also works in a very similar way to Python lists.
+
+36
+00:01:46,07 --> 00:01:48,03
+For instance, we could grab a section
+
+37
+00:01:48,03 --> 00:01:51,00
+in the middle of the painting
+
+38
+00:01:51,00 --> 00:01:56,05
+from rows 400 to 800, columns 200 to 600s.
+
+39
+00:01:56,05 --> 00:01:58,07
+Here's the detail.
+
+40
+00:01:58,07 --> 00:02:01,01
+Often we want to grab the entire range
+
+41
+00:02:01,01 --> 00:02:03,06
+over one or more axes, in which case,
+
+42
+00:02:03,06 --> 00:02:09,06
+we can use the shorthand column for the full slice.
+
+43
+00:02:09,06 --> 00:02:11,06
+There's an even shorter hand
+
+44
+00:02:11,06 --> 00:02:15,05
+for multiple full slices, ellipses sign.
+
+45
+00:02:15,05 --> 00:02:17,03
+We can also specify a step,
+
+46
+00:02:17,03 --> 00:02:19,04
+which has the effect of reducing the resolution
+
+47
+00:02:19,04 --> 00:02:20,02
+of the picture
+
+48
+00:02:20,02 --> 00:02:24,00
+because we've taken every 20th pixel.
+
+49
+00:02:24,00 --> 00:02:25,07
+See the black dot in the middle?
+
+50
+00:02:25,07 --> 00:02:27,09
+It's there because earlier we assigned zero
+
+51
+00:02:27,09 --> 00:02:31,06
+to all three color channels for pixel 600 and 400,
+
+52
+00:02:31,06 --> 00:02:34,05
+the single pixel was invisible at higher resolution,
+
+53
+00:02:34,05 --> 00:02:36,04
+but it's one of those selected by this slice
+
+54
+00:02:36,04 --> 00:02:38,06
+with steps of 20.
+
+55
+00:02:38,06 --> 00:02:41,08
+How about slicing backwards?
+
+56
+00:02:41,08 --> 00:02:43,06
+That works too.
+
+57
+00:02:43,06 --> 00:02:46,05
+And in this case, it inverts the rows.
+
+58
+00:02:46,05 --> 00:02:48,06
+And if we mix slicing and indexing,
+
+59
+00:02:48,06 --> 00:02:51,05
+we reduce the dimensionality of the array.
+
+60
+00:02:51,05 --> 00:02:56,02
+In this case, it becomes just a vector.
+
+61
+00:02:56,02 --> 00:03:00,06
+We can show a vector as an image or we can plot it.
+
+62
+00:03:00,06 --> 00:03:03,03
+Note that fixing one of the indices
+
+63
+00:03:03,03 --> 00:03:07,04
+is not the same as asking for a slice of one.
+
+64
+00:03:07,04 --> 00:03:13,01
+In that case, the array remains two-dimensional.
+
+65
+00:03:13,01 --> 00:03:15,05
+Slicing can also be used on the left side
+
+66
+00:03:15,05 --> 00:03:17,05
+of an assignment statement.
+
+67
+00:03:17,05 --> 00:03:22,03
+We can use this to modify elements in bulk,
+
+68
+00:03:22,03 --> 00:03:27,00
+such as deleting a square in the top corner of the image.
+
+69
+00:03:27,00 --> 00:03:30,08
+Doing so, assign the same value to all the pixels there.
+
+70
+00:03:30,08 --> 00:03:33,03
+But we can also match slices on both sides
+
+71
+00:03:33,03 --> 00:03:34,05
+of the assignment.
+
+72
+00:03:34,05 --> 00:03:36,05
+So let's replace the white square
+
+73
+00:03:36,05 --> 00:03:40,09
+with a random set of pixels.
+
+74
+00:03:40,09 --> 00:03:42,04
+NumPy arrays also support
+
+75
+00:03:42,04 --> 00:03:44,09
+an especially useful form of indexing
+
+76
+00:03:44,09 --> 00:03:47,01
+that is not available with lists.
+
+77
+00:03:47,01 --> 00:03:49,05
+This is known as fancy indexing.
+
+78
+00:03:49,05 --> 00:03:54,05
+It means that we're using arrays to index another array.
+
+79
+00:03:54,05 --> 00:03:55,08
+To demonstrate that,
+
+80
+00:03:55,08 --> 00:03:59,04
+let me grab my lower resolution grayscale image.
+
+81
+00:03:59,04 --> 00:04:01,01
+I'm going to threshold this image
+
+82
+00:04:01,01 --> 00:04:04,09
+by first figuring out all the pixels
+
+83
+00:04:04,09 --> 00:04:08,09
+that are darker than a certain value.
+
+84
+00:04:08,09 --> 00:04:12,05
+The result is a two-dimensional Boolean array,
+
+85
+00:04:12,05 --> 00:04:16,06
+the same size as monalisa_bw.
+
+86
+00:04:16,06 --> 00:04:18,07
+I can then use this Boolean array
+
+87
+00:04:18,07 --> 00:04:22,03
+to select the corresponding subset of pixels
+
+88
+00:04:22,03 --> 00:04:26,03
+and modify only those.
+
+89
+00:04:26,03 --> 00:04:28,06
+Here's the thresholded image.
+
+90
+00:04:28,06 --> 00:04:31,07
+Finally, let me point out another very important difference
+
+91
+00:04:31,07 --> 00:04:34,02
+between lists and NumPy arrays.
+
+92
+00:04:34,02 --> 00:04:37,05
+Whenever you slice a list, you make a copy of it.
+
+93
+00:04:37,05 --> 00:04:41,04
+Say I have a simple list of six elements
+
+94
+00:04:41,04 --> 00:04:43,08
+and I take a slice of the first four.
+
+95
+00:04:43,08 --> 00:04:49,09
+Assigning to the slice does not modify the original list.
+
+96
+00:04:49,09 --> 00:04:53,03
+By contrast, a slice of a NumPy array
+
+97
+00:04:53,03 --> 00:04:55,00
+is a new NumPy object
+
+98
+00:04:55,00 --> 00:04:57,03
+that points to the same area of memory,
+
+99
+00:04:57,03 --> 00:04:59,06
+but we modified meta data that represents
+
+100
+00:04:59,06 --> 00:05:02,01
+the different boundaries.
+
+101
+00:05:02,01 --> 00:05:04,02
+So if I assigned to the slides,
+
+102
+00:05:04,02 --> 00:05:08,07
+I'm also assigning to the underlying object.
+
+103
+00:05:08,07 --> 00:05:12,02
+If we want a true copy pointing to new memory,
+
+104
+00:05:12,02 --> 00:05:16,03
+you have to make the copy explicitly.
+
+105
+00:05:16,03 --> 00:05:20,00
+Acting on the copy does not affect the original.
+

@@ -1,0 +1,256 @@
+1
+00:00:00,00 --> 00:00:05,06
+(upbeat music)
+
+2
+00:00:05,06 --> 00:00:08,02
+- As I mentioned already, in Pandas there are often
+
+3
+00:00:08,02 --> 00:00:10,09
+several ways to get the same result.
+
+4
+00:00:10,09 --> 00:00:13,03
+So if your results are similar to mine,
+
+5
+00:00:13,03 --> 00:00:15,00
+but you get them in a different way,
+
+6
+00:00:15,00 --> 00:00:17,09
+don't worry, your solution may even be better.
+
+7
+00:00:17,09 --> 00:00:20,06
+We'll load our data set as usual.
+
+8
+00:00:20,06 --> 00:00:23,09
+We need to compute the total number of boys and girls
+
+9
+00:00:23,09 --> 00:00:26,01
+for a given name.
+
+10
+00:00:26,01 --> 00:00:28,07
+This seems a good place to use group by,
+
+11
+00:00:28,07 --> 00:00:31,06
+which lets us segment the data before applying
+
+12
+00:00:31,06 --> 00:00:35,00
+an aggregation, in this case, the sum
+
+13
+00:00:35,00 --> 00:00:37,03
+of the number of babies.
+
+14
+00:00:37,03 --> 00:00:40,09
+So we use group by over sex and name,
+
+15
+00:00:40,09 --> 00:00:44,04
+we select the number column and we take the sum.
+
+16
+00:00:44,04 --> 00:00:47,01
+From this list with a multi-index,
+
+17
+00:00:47,01 --> 00:00:50,01
+we can grab the males and females respectively,
+
+18
+00:00:50,01 --> 00:00:54,01
+using dot lock.
+
+19
+00:00:54,01 --> 00:00:57,05
+As you see, the two indices are going to be different.
+
+20
+00:00:57,05 --> 00:01:00,07
+Epon doesn't appear in the females.
+
+21
+00:01:00,07 --> 00:01:03,03
+Nevertheless, we can combine the two series
+
+22
+00:01:03,03 --> 00:01:07,02
+and pandas will align the indices for us.
+
+23
+00:01:07,02 --> 00:01:10,09
+The results would be none where either series
+
+24
+00:01:10,09 --> 00:01:12,07
+doesn't have an element.
+
+25
+00:01:12,07 --> 00:01:17,01
+For instance we check where the ratio between
+
+26
+00:01:17,01 --> 00:01:20,06
+males and females is less than two.
+
+27
+00:01:20,06 --> 00:01:22,08
+We can certainly get rid of those nones
+
+28
+00:01:22,08 --> 00:01:25,05
+with drop in A.
+
+29
+00:01:25,05 --> 00:01:28,05
+Now, remember the definition of unisex names
+
+30
+00:01:28,05 --> 00:01:31,09
+as those with a ratio between .5 and two.
+
+31
+00:01:31,09 --> 00:01:35,04
+This is a good expression for fancy indexing,
+
+32
+00:01:35,04 --> 00:01:37,04
+and after we apply it,
+
+33
+00:01:37,04 --> 00:01:44,08
+we see that 1660 names pass the test.
+
+34
+00:01:44,08 --> 00:01:47,09
+Here, I've taken the index, because we don't actually need
+
+35
+00:01:47,09 --> 00:01:51,00
+the ratio itself, but just the names.
+
+36
+00:01:51,00 --> 00:01:54,04
+The next thing to do is to find the ten most common
+
+37
+00:01:54,04 --> 00:01:59,08
+unisex names, so we sum the male and female counts
+
+38
+00:01:59,08 --> 00:02:04,01
+using the unisex array to index our two totals.
+
+39
+00:02:04,01 --> 00:02:07,00
+We sort the resulting series,
+
+40
+00:02:07,00 --> 00:02:11,00
+and we cut it off at the top.
+
+41
+00:02:11,00 --> 00:02:15,01
+Jessie seems to be the winner of this particular contest,
+
+42
+00:02:15,01 --> 00:02:18,08
+followed by Reilly, Casey, and Jackie.
+
+43
+00:02:18,08 --> 00:02:21,03
+Now to clock popularity, it's convenient to use
+
+44
+00:02:21,03 --> 00:02:23,05
+a fully indexed data frame.
+
+45
+00:02:23,05 --> 00:02:27,08
+We also remember to sort that index.
+
+46
+00:02:27,08 --> 00:02:31,02
+Now we'll loop over the most common unisex names,
+
+47
+00:02:31,02 --> 00:02:35,04
+which remember, are the index of the common series,
+
+48
+00:02:35,04 --> 00:02:40,01
+and we plot by selecting male or female in the name.
+
+49
+00:02:40,01 --> 00:02:43,04
+Matplotlib type layout helps improve the spacing
+
+50
+00:02:43,04 --> 00:02:47,03
+of the subplots, while Jessie is the absolute winner,
+
+51
+00:02:47,03 --> 00:02:50,02
+it appears to have fallen out of favor somewhat.
+
+52
+00:02:50,02 --> 00:02:54,01
+Reilly is ascendant, but not for boys anymore,
+
+53
+00:02:54,01 --> 00:02:57,05
+and Casey, which peaked around 1990,
+
+54
+00:02:57,05 --> 00:03:00,03
+may be the most unisex name of all,
+
+55
+00:03:00,03 --> 00:03:02,03
+with the male usage of the name tracking the
+
+56
+00:03:02,03 --> 00:03:05,03
+female usage very closely.
+
+57
+00:03:05,03 --> 00:03:09,02
+Great, we've been through a lot in this course,
+
+58
+00:03:09,02 --> 00:03:11,00
+and I hope you've gained an understanding
+
+59
+00:03:11,00 --> 00:03:15,02
+of what is possible with NumPy and Pandas and matplotlib,
+
+60
+00:03:15,02 --> 00:03:17,00
+and more generally, with Python as a language
+
+61
+00:03:17,00 --> 00:03:18,08
+for data analysis.
+
+62
+00:03:18,08 --> 00:03:21,06
+I hope you'll go out to discover and learn
+
+63
+00:03:21,06 --> 00:03:25,05
+even more and that you use Python happily
+
+64
+00:03:25,05 --> 00:03:27,00
+in your every day work.
+

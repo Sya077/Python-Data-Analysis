@@ -1,0 +1,172 @@
+1
+00:00:00,01 --> 00:00:05,06
+(upbeat music)
+
+2
+00:00:05,06 --> 00:00:07,00
+- [Instructor] We start by importing getWeather,
+
+3
+00:00:07,00 --> 00:00:09,08
+since we need temperature data.
+
+4
+00:00:09,08 --> 00:00:12,07
+It will also be good to show smoothed plots,
+
+5
+00:00:12,07 --> 00:00:15,06
+so we'll grab the smooth function that we made.
+
+6
+00:00:15,06 --> 00:00:18,06
+We need all the available historical data for New York,
+
+7
+00:00:18,06 --> 00:00:22,05
+say 1880 through 2019,
+
+8
+00:00:22,05 --> 00:00:25,07
+which we collect in a stacked array.
+
+9
+00:00:25,07 --> 00:00:28,08
+We sum TMIN and TMAX for this large array
+
+10
+00:00:28,08 --> 00:00:31,04
+and then take the average across the columns.
+
+11
+00:00:31,04 --> 00:00:33,04
+So x is equal one,
+
+12
+00:00:33,04 --> 00:00:37,01
+so that we get a value for each year.
+
+13
+00:00:37,01 --> 00:00:39,08
+The shape isn't yet what we expect.
+
+14
+00:00:39,08 --> 00:00:42,09
+Next, the mid-century average.
+
+15
+00:00:42,09 --> 00:00:48,00
+We need to figure out the index of 1945 and 1955,
+
+16
+00:00:48,00 --> 00:00:50,09
+in this all avg array.
+
+17
+00:00:50,09 --> 00:00:53,03
+For lists, we can use index
+
+18
+00:00:53,03 --> 00:00:55,08
+to figure out the location of an element.
+
+19
+00:00:55,08 --> 00:00:56,09
+But unfortunately,
+
+20
+00:00:56,09 --> 00:00:59,06
+that doesn't work for NumPy arrays.
+
+21
+00:00:59,06 --> 00:01:03,00
+However, we can turn array into lists quite easily
+
+22
+00:01:03,00 --> 00:01:05,08
+by feeding them to the list constructor,
+
+23
+00:01:05,08 --> 00:01:08,04
+and then index works.
+
+24
+00:01:08,04 --> 00:01:10,09
+So now we can perform the mid-century average
+
+25
+00:01:10,09 --> 00:01:16,09
+over the correct slice of the array.
+
+26
+00:01:16,09 --> 00:01:19,03
+It's 12.8 degrees.
+
+27
+00:01:19,03 --> 00:01:20,06
+And here's the plot.
+
+28
+00:01:20,06 --> 00:01:22,07
+The anomaly is all avg
+
+29
+00:01:22,07 --> 00:01:26,03
+minus the mid-century mean.
+
+30
+00:01:26,03 --> 00:01:27,04
+It's quite noisy,
+
+31
+00:01:27,04 --> 00:01:29,00
+so let's smooth it out.
+
+32
+00:01:29,00 --> 00:01:32,07
+If we use valid mode to avoid artifacts at the edges,
+
+33
+00:01:32,07 --> 00:01:38,05
+we need to remove some years from the x-coordinate.
+
+34
+00:01:38,05 --> 00:01:40,01
+The solution is complete really,
+
+35
+00:01:40,01 --> 00:01:42,07
+but we can collect this code in a more general function
+
+36
+00:01:42,07 --> 00:01:46,07
+so we can compare a few cities.
+
+37
+00:01:46,07 --> 00:01:49,02
+So here's the comparison,
+
+38
+00:01:49,02 --> 00:01:51,09
+with some complaints from NumPy
+
+39
+00:01:51,09 --> 00:01:52,09
+by way of Jupiter
+
+40
+00:01:52,09 --> 00:01:56,02
+that there's really no data before 1910 for Pasadena,
+
+41
+00:01:56,02 --> 00:01:59,06
+and 1940 for Minneapolis.
+
+42
+00:01:59,06 --> 00:02:03,06
+Still, the upward trend for all these three locations
+
+43
+00:02:03,06 --> 00:02:05,00
+is quite evident.
+

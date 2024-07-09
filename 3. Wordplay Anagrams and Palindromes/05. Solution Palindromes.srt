@@ -1,0 +1,172 @@
+1
+00:00:00,00 --> 00:00:05,06
+(upbeat music)
+
+2
+00:00:05,06 --> 00:00:08,00
+- [Narrator] Here is my solution to the challenge.
+
+3
+00:00:08,00 --> 00:00:10,03
+You were asked to find all palindromic
+
+4
+00:00:10,03 --> 00:00:13,07
+pairs of words in the English dictionary.
+
+5
+00:00:13,07 --> 00:00:16,02
+We start by loading our list of words
+
+6
+00:00:16,02 --> 00:00:20,00
+with the one line of comprehension.
+
+7
+00:00:20,00 --> 00:00:23,08
+We will explore the fact that if two words are palindromic,
+
+8
+00:00:23,08 --> 00:00:27,00
+then they are also anagrams of each other.
+
+9
+00:00:27,00 --> 00:00:29,06
+We will also need the code we wrote in this chapter
+
+10
+00:00:29,06 --> 00:00:31,00
+to compute signatures
+
+11
+00:00:31,00 --> 00:00:34,08
+and to associate words to signatures.
+
+12
+00:00:34,08 --> 00:00:37,00
+In Python, there is no built-in function
+
+13
+00:00:37,00 --> 00:00:39,08
+or method to reverse a string,
+
+14
+00:00:39,08 --> 00:00:43,01
+but we can achieve it easily by slicing.
+
+15
+00:00:43,01 --> 00:00:47,07
+The slicing step will need to be negative backwards.
+
+16
+00:00:47,07 --> 00:00:50,05
+We will omit the slice start and stop
+
+17
+00:00:50,05 --> 00:00:52,05
+to get the entire string.
+
+18
+00:00:52,05 --> 00:00:58,00
+So for Mickela, we do a slice of colon, colon, minus one.
+
+19
+00:00:58,00 --> 00:01:00,08
+We now look over all the word sets,
+
+20
+00:01:00,08 --> 00:01:03,00
+one for each signature,
+
+21
+00:01:03,00 --> 00:01:06,07
+and then overall pairs of words in the word set,
+
+22
+00:01:06,07 --> 00:01:11,01
+checking if one of them equals the reverse of the other.
+
+23
+00:01:11,01 --> 00:01:13,00
+It's a little annoying to write the loops,
+
+24
+00:01:13,00 --> 00:01:15,04
+so that we are only checking the same pair twice,
+
+25
+00:01:15,04 --> 00:01:17,05
+in reversed orders.
+
+26
+00:01:17,05 --> 00:01:23,00
+One way is to check pairs on if they are sorted.
+
+27
+00:01:23,00 --> 00:01:25,09
+Here's the list.
+
+28
+00:01:25,09 --> 00:01:28,00
+It includes also the true palindromes
+
+29
+00:01:28,00 --> 00:01:29,03
+where in order, reverse order,
+
+30
+00:01:29,03 --> 00:01:31,07
+equals itself.
+
+31
+00:01:31,07 --> 00:01:36,01
+But manual dis-sorts do not seem very common.
+
+32
+00:01:36,01 --> 00:01:38,08
+I'm going to give you, also, more elegant solution.
+
+33
+00:01:38,08 --> 00:01:44,02
+Using the stand a library module, intertools.
+
+34
+00:01:44,02 --> 00:01:47,06
+Intertools includes an iterator combinations
+
+35
+00:01:47,06 --> 00:01:49,03
+which return all combinations,
+
+36
+00:01:49,03 --> 00:01:50,09
+say of two items,
+
+37
+00:01:50,09 --> 00:01:53,07
+from a list of three.
+
+38
+00:01:53,07 --> 00:01:56,02
+We can then simplify our solution,
+
+39
+00:01:56,02 --> 00:01:58,04
+by again looping over word sets,
+
+40
+00:01:58,04 --> 00:02:01,03
+and then by selecting pairs of words in the word set
+
+41
+00:02:01,03 --> 00:02:04,02
+using intertools combinations.
+
+42
+00:02:04,02 --> 00:02:07,04
+The code is cleaner and more expressive.
+
+43
+00:02:07,04 --> 00:02:09,00
+But the solution is the same.
+

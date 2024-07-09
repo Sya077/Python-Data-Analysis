@@ -1,0 +1,92 @@
+1
+00:00:00,05 --> 00:00:01,05
+- [Instructor] In chapter two,
+
+2
+00:00:01,05 --> 00:00:03,03
+we have reviewed Python loops,
+
+3
+00:00:03,03 --> 00:00:06,00
+data containers, and comprehensions.
+
+4
+00:00:06,00 --> 00:00:07,06
+Now we will set them to work
+
+5
+00:00:07,06 --> 00:00:09,08
+in a simple, practical project,
+
+6
+00:00:09,08 --> 00:00:13,03
+finding anagrams in the English dictionary.
+
+7
+00:00:13,03 --> 00:00:16,04
+As you know, two words are anagrams of each other
+
+8
+00:00:16,04 --> 00:00:18,01
+when their letters can be rearranged
+
+9
+00:00:18,01 --> 00:00:20,08
+to turn one word into the other.
+
+10
+00:00:20,08 --> 00:00:24,01
+For instance, elvis and lives.
+
+11
+00:00:24,01 --> 00:00:28,00
+We will use this simple strategy to find anagrams.
+
+12
+00:00:28,00 --> 00:00:30,02
+We defined a signature of a word
+
+13
+00:00:30,02 --> 00:00:35,00
+as the sorted list of its letters, including duplicates.
+
+14
+00:00:35,00 --> 00:00:39,06
+So the signature of post would be opst.
+
+15
+00:00:39,06 --> 00:00:45,00
+And then we find that spot, stop, tops, pots, and opts
+
+16
+00:00:45,00 --> 00:00:47,05
+have the same signature as post
+
+17
+00:00:47,05 --> 00:00:50,08
+and therefore they're all anagrams of each other.
+
+18
+00:00:50,08 --> 00:00:52,08
+We're going to make a Python dict
+
+19
+00:00:52,08 --> 00:00:57,00
+of all the words in the dictionary indexed by signature.
+
+20
+00:00:57,00 --> 00:01:00,06
+And then to find out if a word has an anagram,
+
+21
+00:01:00,06 --> 00:01:02,08
+we will just compute the signature
+
+22
+00:01:02,08 --> 00:01:05,04
+and look it up in the dict.
+
+23
+00:01:05,04 --> 00:01:07,00
+Let's begin.
+

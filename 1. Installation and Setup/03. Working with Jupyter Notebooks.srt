@@ -1,0 +1,288 @@
+1
+00:00:00,00 --> 00:00:01,09
+- [Narrator] Jupyter notebooks,
+
+2
+00:00:01,09 --> 00:00:04,06
+offer a very convenient way to write code,
+
+3
+00:00:04,06 --> 00:00:07,08
+run it, and collect the results including plots,
+
+4
+00:00:07,08 --> 00:00:10,01
+in a single document.
+
+5
+00:00:10,01 --> 00:00:13,05
+You can even write formatted text and equations.
+
+6
+00:00:13,05 --> 00:00:15,08
+This is my favorite way of using Python,
+
+7
+00:00:15,08 --> 00:00:18,05
+because it lets me experiment with data and code,
+
+8
+00:00:18,05 --> 00:00:21,05
+document my work, and go back to it later.
+
+9
+00:00:21,05 --> 00:00:24,09
+You start Jupiter notebook from the Anaconda navigator,
+
+10
+00:00:24,09 --> 00:00:26,05
+by clicking on launch.
+
+11
+00:00:26,05 --> 00:00:28,06
+If you don't have an Anaconda,
+
+12
+00:00:28,06 --> 00:00:35,03
+you can go to a terminal, and type Jupyter notebook.
+
+13
+00:00:35,03 --> 00:00:37,06
+A web browser opens, and I can choose
+
+14
+00:00:37,06 --> 00:00:40,09
+if I wish to load an existing notebook from the file system,
+
+15
+00:00:40,09 --> 00:00:42,07
+or to start a new one,
+
+16
+00:00:42,07 --> 00:00:46,02
+which I do at the top right of the screen.
+
+17
+00:00:46,02 --> 00:00:49,02
+New, Python three notebook.
+
+18
+00:00:49,02 --> 00:00:52,09
+Here's the notebook. See the green box at the top?.
+
+19
+00:00:52,09 --> 00:00:58,07
+It's a cell. It's ready for me to write some Python,
+
+20
+00:00:58,07 --> 00:01:00,02
+for instance,
+
+21
+00:01:00,02 --> 00:01:01,00
+(keyboard typing)
+
+22
+00:01:01,00 --> 00:01:03,00
+The customary equating.
+
+23
+00:01:03,00 --> 00:01:07,07
+I execute the code, by pressing Shift + Enter,
+
+24
+00:01:07,07 --> 00:01:11,06
+or Shift + return depending on your keyboard.
+
+25
+00:01:11,06 --> 00:01:15,02
+The output is printed immediately below it.
+
+26
+00:01:15,02 --> 00:01:19,02
+I can click inside the cell,
+
+27
+00:01:19,02 --> 00:01:23,03
+modify it,
+
+28
+00:01:23,03 --> 00:01:27,08
+and execute it again, with shift enter.
+
+29
+00:01:27,08 --> 00:01:30,00
+If a cell has a blue border,
+
+30
+00:01:30,00 --> 00:01:34,03
+I need to press ENTER before I can edit it.
+
+31
+00:01:34,03 --> 00:01:39,09
+Or I can click inside a different cell, to edit that one.
+
+32
+00:01:39,09 --> 00:01:41,07
+In addition to a simple command,
+
+33
+00:01:41,07 --> 00:01:47,09
+I can write a function over multiple lines.
+
+34
+00:01:47,09 --> 00:01:50,07
+The editor, will color the Python source keywords,
+
+35
+00:01:50,07 --> 00:01:53,09
+appropriately.
+
+36
+00:01:53,09 --> 00:01:58,06
+Again, I execute with Shift + Enter
+
+37
+00:01:58,06 --> 00:02:03,00
+cells, can also contain text rather than code.
+
+38
+00:02:03,00 --> 00:02:06,02
+For that, I can use the drop down menu cell,
+
+39
+00:02:06,02 --> 00:02:10,06
+to change the cell type to markdown.
+
+40
+00:02:10,06 --> 00:02:13,04
+Then I click in the cell and start writing.
+
+41
+00:02:13,04 --> 00:02:16,06
+Markdown is a simple but powerful text format
+
+42
+00:02:16,06 --> 00:02:20,04
+that can do basic formatting, bold, italic,
+
+43
+00:02:20,04 --> 00:02:25,04
+bullet points, hyperlinks, and even mathematical formulas.
+
+44
+00:02:25,04 --> 00:02:31,01
+For instance, bold, (keyboard typing), with two asterisks.
+
+45
+00:02:31,01 --> 00:02:33,08
+(keyboard typing)
+
+46
+00:02:33,08 --> 00:02:37,09
+URLs, which are recognized,
+
+47
+00:02:37,09 --> 00:02:40,04
+(keyboard typing)
+
+48
+00:02:40,04 --> 00:02:42,02
+a bullet point,
+
+49
+00:02:42,02 --> 00:02:48,01
+and a formula in the LaTeX language, between dollar signs.
+
+50
+00:02:48,01 --> 00:02:50,06
+When I execute the cell, with shift Enter,
+
+51
+00:02:50,06 --> 00:02:54,02
+everything is formatted in prettified.
+
+52
+00:02:54,02 --> 00:02:57,02
+To copy a cell, I can click inside it,
+
+53
+00:02:57,02 --> 00:03:01,03
+or use the arrow keys to select it, and then press
+
+54
+00:03:01,03 --> 00:03:07,00
+escape C, to copy and then escape V, to paste.
+
+55
+00:03:07,00 --> 00:03:11,01
+To cut a cell, I can do escape X
+
+56
+00:03:11,01 --> 00:03:19,02
+To delete a cell ctrl M, and then D, and again D,
+
+57
+00:03:19,02 --> 00:03:20,02
+Jupyter wants to be sure
+
+58
+00:03:20,02 --> 00:03:22,09
+you really want to delete that cell.
+
+59
+00:03:22,09 --> 00:03:26,06
+Or you can use the menus, of course,
+
+60
+00:03:26,06 --> 00:03:29,05
+I gave you only the most useful keyboard shortcuts,
+
+61
+00:03:29,05 --> 00:03:36,00
+but there are many more, look under the Help menu.
+
+62
+00:03:36,00 --> 00:03:39,00
+The notebook is saved periodically for us,
+
+63
+00:03:39,00 --> 00:03:43,01
+but I can also do that at any time with command S,
+
+64
+00:03:43,01 --> 00:03:46,09
+ah, and I can give this notebook a name,
+
+65
+00:03:46,09 --> 00:03:50,09
+such as learning Jupyter,
+
+66
+00:03:50,09 --> 00:03:54,07
+by clicking at the top of the window.
+
+67
+00:03:54,07 --> 00:03:57,02
+Go find the Jupyter notebook documentation,
+
+68
+00:03:57,02 --> 00:03:59,07
+at Jupiter.org.
+
+69
+00:03:59,07 --> 00:04:01,09
+You will also learn about Jupyter lab,
+
+70
+00:04:01,09 --> 00:04:03,01
+and even more powerful,
+
+71
+00:04:03,01 --> 00:04:06,05
+and complete interface than notebooks.
+
+72
+00:04:06,05 --> 00:04:11,00
+For this course however, we will stay with Jupyter notebook.
+

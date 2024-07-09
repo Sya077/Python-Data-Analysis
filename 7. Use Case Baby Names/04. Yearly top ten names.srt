@@ -1,0 +1,288 @@
+1
+00:00:00,00 --> 00:00:01,08
+- [Instructor] In this video,
+
+2
+00:00:01,08 --> 00:00:06,05
+we will create yearly top 10s for male and female names.
+
+3
+00:00:06,05 --> 00:00:08,08
+We load the data, and this time,
+
+4
+00:00:08,08 --> 00:00:13,09
+we index it slightly differently, by sex and year only
+
+5
+00:00:13,09 --> 00:00:17,08
+since we will need to compare all the names in the database.
+
+6
+00:00:17,08 --> 00:00:22,05
+We now build up a query by chaining pandas methods.
+
+7
+00:00:22,05 --> 00:00:25,00
+Getting males in 2018
+
+8
+00:00:25,00 --> 00:00:29,00
+is a simple matter of a multiindex.log.
+
+9
+00:00:29,00 --> 00:00:30,09
+Then we get the most popular names
+
+10
+00:00:30,09 --> 00:00:36,09
+by sorting our number in descending order.
+
+11
+00:00:36,09 --> 00:00:41,09
+Head gives us a top 10.
+
+12
+00:00:41,09 --> 00:00:47,00
+In 2018, Liam was king, followed closely by Noah.
+
+13
+00:00:47,00 --> 00:00:50,01
+How about girls?
+
+14
+00:00:50,01 --> 00:00:56,03
+We index sex with f, and the year is still 2018.
+
+15
+00:00:56,03 --> 00:00:59,06
+For girls, it was Emma and Olivia.
+
+16
+00:00:59,06 --> 00:01:02,03
+If we to build a table of the top 10 names
+
+17
+00:01:02,03 --> 00:01:04,03
+over multiple years,
+
+18
+00:01:04,03 --> 00:01:07,07
+we should get rid of the index with Reset Index,
+
+19
+00:01:07,07 --> 00:01:10,08
+and select the name, Column Only.
+
+20
+00:01:10,08 --> 00:01:14,00
+I will make this into a generic function.
+
+21
+00:01:14,00 --> 00:01:15,03
+As I was saying, in pandas,
+
+22
+00:01:15,03 --> 00:01:19,06
+one sees this operator chaining style often.
+
+23
+00:01:19,06 --> 00:01:21,04
+And we can make the code clear
+
+24
+00:01:21,04 --> 00:01:24,09
+by giving each method it's own line.
+
+25
+00:01:24,09 --> 00:01:27,04
+It's a good idea, however, to add comments
+
+26
+00:01:27,04 --> 00:01:29,05
+to explain what you're doing,
+
+27
+00:01:29,05 --> 00:01:33,01
+either for your collaborators or your future self
+
+28
+00:01:33,01 --> 00:01:36,05
+since pandas can be obscure.
+
+29
+00:01:36,05 --> 00:01:37,09
+To form a table,
+
+30
+00:01:37,09 --> 00:01:40,06
+we collect the series for different years
+
+31
+00:01:40,06 --> 00:01:45,02
+as the columns of the data frame, labeled by the year.
+
+32
+00:01:45,02 --> 00:01:46,01
+So in effect,
+
+33
+00:01:46,01 --> 00:01:52,03
+we're creating a data frame from a dict comprehension.
+
+34
+00:01:52,03 --> 00:01:55,07
+For males, you can see Liam gaining popularity
+
+35
+00:01:55,07 --> 00:01:58,03
+and Jacob dropping.
+
+36
+00:01:58,03 --> 00:02:01,08
+For females, we see that Emma has been dominant
+
+37
+00:02:01,08 --> 00:02:05,06
+for a few years while Sophia dropped.
+
+38
+00:02:05,06 --> 00:02:09,00
+Olivia is there, waiting to take the crown.
+
+39
+00:02:09,00 --> 00:02:13,02
+How about the popularity plot for the 2018 top 10?
+
+40
+00:02:13,02 --> 00:02:16,02
+For a change, we'll use the query interface,
+
+41
+00:02:16,02 --> 00:02:19,04
+which conveniently lets us use the values of variables
+
+42
+00:02:19,04 --> 00:02:22,02
+with the Add Notation.
+
+43
+00:02:22,02 --> 00:02:26,07
+So here, we're passing sex and name to the function.
+
+44
+00:02:26,07 --> 00:02:28,08
+And we select in All The Records
+
+45
+00:02:28,08 --> 00:02:32,06
+where the sex column equals the sex argument,
+
+46
+00:02:32,06 --> 00:02:36,07
+and the name column equals the name argument.
+
+47
+00:02:36,07 --> 00:02:38,08
+This is not very pythonic,
+
+48
+00:02:38,08 --> 00:02:42,04
+but it's nice to have once you know about it.
+
+49
+00:02:42,04 --> 00:02:48,00
+Once we have the records, we plot number against year.
+
+50
+00:02:48,00 --> 00:02:54,04
+So let's loop over the 2018 female top 10 and plot each.
+
+51
+00:02:54,04 --> 00:02:55,09
+It's interesting to see
+
+52
+00:02:55,09 --> 00:03:00,04
+that all the top names seem to have surged quite recently
+
+53
+00:03:00,04 --> 00:03:05,04
+except perhaps for Evelyn, which was popular in the 1920s.
+
+54
+00:03:05,04 --> 00:03:12,02
+As for the male names, two are classics, William and James.
+
+55
+00:03:12,02 --> 00:03:15,01
+Let's look at the others then.
+
+56
+00:03:15,01 --> 00:03:17,00
+This is the list, and I will copy
+
+57
+00:03:17,00 --> 00:03:22,00
+a subset of it to the loop over which I plot.
+
+58
+00:03:22,00 --> 00:03:25,09
+So now, I'm excluding William and James.
+
+59
+00:03:25,09 --> 00:03:28,03
+And I see that, yes, the other eight
+
+60
+00:03:28,03 --> 00:03:31,07
+have also been recent discoveries.
+
+61
+00:03:31,07 --> 00:03:34,08
+How about all-time favorites?
+
+62
+00:03:34,08 --> 00:03:39,00
+We get there quickly by selecting females, say,
+
+63
+00:03:39,00 --> 00:03:42,07
+grouping by name, summing the numbers,
+
+64
+00:03:42,07 --> 00:03:48,08
+sorting by the values, and then taking the top 10.
+
+65
+00:03:48,08 --> 00:03:54,00
+Mary is in fact the all-time favorite among girls.
+
+66
+00:03:54,00 --> 00:03:58,09
+If we look at the popularity over time of these names,
+
+67
+00:03:58,09 --> 00:04:02,03
+we see that they've gained their spots
+
+68
+00:04:02,03 --> 00:04:07,05
+in the first half of the 20th century except for Jennifer.
+
+69
+00:04:07,05 --> 00:04:13,00
+Now that given the structure of the all-time f data frame,
+
+70
+00:04:13,00 --> 00:04:17,00
+I'm looping over the index rather than the value.
+
+71
+00:04:17,00 --> 00:04:19,09
+Next, you'll be asked to use what you learned
+
+72
+00:04:19,09 --> 00:04:23,00
+in a challenge about unisex names.
+

@@ -1,0 +1,372 @@
+1
+00:00:00,05 --> 00:00:02,02
+- [Instructor] While lists give us a way
+
+2
+00:00:02,02 --> 00:00:04,07
+to retrieve values by their index.
+
+3
+00:00:04,07 --> 00:00:07,05
+Python dictionary or dicts
+
+4
+00:00:07,05 --> 00:00:10,08
+associate keys with values.
+
+5
+00:00:10,08 --> 00:00:12,03
+After my imports,
+
+6
+00:00:12,03 --> 00:00:15,04
+let me write a simple dictionary.
+
+7
+00:00:15,04 --> 00:00:17,09
+Dicts are written with curly braces,
+
+8
+00:00:17,09 --> 00:00:20,08
+separating items with commas
+
+9
+00:00:20,08 --> 00:00:24,09
+and prefixing them by their key in a column.
+
+10
+00:00:24,09 --> 00:00:29,09
+For instance, the capitals of a few countries.
+
+11
+00:00:29,09 --> 00:00:31,07
+Just as we do with lists,
+
+12
+00:00:31,07 --> 00:00:34,05
+values are accessed with a bracket notation.
+
+13
+00:00:34,05 --> 00:00:37,07
+But instead of a number, we're going to use a key.
+
+14
+00:00:37,07 --> 00:00:38,05
+For instance,
+
+15
+00:00:38,05 --> 00:00:42,04
+we may wish to look at the capital of Italy.
+
+16
+00:00:42,04 --> 00:00:48,05
+The same notation can be used to add items to a dictionary.
+
+17
+00:00:48,05 --> 00:00:55,04
+Accessing a nonexistent item results in a key error.
+
+18
+00:00:55,04 --> 00:00:56,05
+We can also check
+
+19
+00:00:56,05 --> 00:00:58,08
+whether an item exists or not
+
+20
+00:00:58,08 --> 00:01:02,04
+with the in operator.
+
+21
+00:01:02,04 --> 00:01:06,01
+So we have Italy, but not Germany.
+
+22
+00:01:06,01 --> 00:01:08,03
+Combining two dictionaries requires
+
+23
+00:01:08,03 --> 00:01:11,07
+a little more thought than combining two lists.
+
+24
+00:01:11,07 --> 00:01:17,09
+Unlike lists, we cannot just use the plus to add them.
+
+25
+00:01:17,09 --> 00:01:20,03
+That's because we need to specify what happens
+
+26
+00:01:20,03 --> 00:01:23,05
+if both dictionaries define the same key.
+
+27
+00:01:23,05 --> 00:01:28,08
+What we then do is to update a dict using another,
+
+28
+00:01:28,08 --> 00:01:33,08
+which will replace existing items as appropriate.
+
+29
+00:01:33,08 --> 00:01:37,08
+This happens in place and modifies the dict.
+
+30
+00:01:37,08 --> 00:01:43,01
+Similarly to lists, we can delete items by key.
+
+31
+00:01:43,01 --> 00:01:46,08
+In fact, keys do not need to be strings.
+
+32
+00:01:46,08 --> 00:01:51,02
+Any Python object that is hashable may be used as a name.
+
+33
+00:01:51,02 --> 00:01:55,03
+Hashable means that Python can convert it to a number.
+
+34
+00:01:55,03 --> 00:01:58,02
+That's true for many types of objects.
+
+35
+00:01:58,02 --> 00:02:00,03
+For instance, tuples
+
+36
+00:02:00,03 --> 00:02:05,03
+which may be used to encode a birthday.
+
+37
+00:02:05,03 --> 00:02:07,00
+We can see the internal representation
+
+38
+00:02:07,00 --> 00:02:12,02
+of the keys with hash.
+
+39
+00:02:12,02 --> 00:02:15,01
+Just very large numbers.
+
+40
+00:02:15,01 --> 00:02:20,02
+The empty dictionary is written with an empty set of braces
+
+41
+00:02:20,02 --> 00:02:24,03
+and has length zero.
+
+42
+00:02:24,03 --> 00:02:25,08
+Looping over a dictionary
+
+43
+00:02:25,08 --> 00:02:28,08
+is very similar to looping over a list.
+
+44
+00:02:28,08 --> 00:02:31,05
+However, there are three different kind of loops
+
+45
+00:02:31,05 --> 00:02:33,04
+you may want to write.
+
+46
+00:02:33,04 --> 00:02:36,05
+The most straightforward syntax loops over the keys,
+
+47
+00:02:36,05 --> 00:02:38,06
+for key in dictionary.
+
+48
+00:02:38,06 --> 00:02:43,00
+Here, I'm using bold to denote language keywords.
+
+49
+00:02:43,00 --> 00:02:46,05
+Whereas Roman words are the names of the variables
+
+50
+00:02:46,05 --> 00:02:48,08
+that you will be using.
+
+51
+00:02:48,08 --> 00:02:51,09
+You can loop also explicitly over the keys,
+
+52
+00:02:51,09 --> 00:02:53,08
+you can loop over the values,
+
+53
+00:02:53,08 --> 00:02:57,03
+and you can loop over the keys and values together.
+
+54
+00:02:57,03 --> 00:03:00,04
+Let's see an example of each of these
+
+55
+00:03:00,04 --> 00:03:03,07
+For country in capitals,
+
+56
+00:03:03,07 --> 00:03:05,07
+we loop over keys.
+
+57
+00:03:05,07 --> 00:03:11,00
+So will for country in capitals keys.
+
+58
+00:03:11,00 --> 00:03:15,00
+Note that capitals dot keys is not a list,
+
+59
+00:03:15,00 --> 00:03:19,02
+but a special iterator object.
+
+60
+00:03:19,02 --> 00:03:21,00
+We can make it into a list though
+
+61
+00:03:21,00 --> 00:03:26,04
+by feeding it to the list constructor list.
+
+62
+00:03:26,04 --> 00:03:32,05
+The other two dict loops are over values, dot values,
+
+63
+00:03:32,05 --> 00:03:39,00
+and over keys and values together using tuple unpacking.
+
+64
+00:03:39,00 --> 00:03:43,07
+Beginning in Python 3.6 for the C Python interpreter,
+
+65
+00:03:43,07 --> 00:03:48,02
+and in python 3.7, for the very language definition,
+
+66
+00:03:48,02 --> 00:03:51,08
+the order of insertion is preserved for dicts.
+
+67
+00:03:51,08 --> 00:03:54,06
+This means then when we loop over the keys or the items,
+
+68
+00:03:54,06 --> 00:03:55,08
+we get them in the order
+
+69
+00:03:55,08 --> 00:03:58,08
+in which we originally added them to the dict.
+
+70
+00:03:58,08 --> 00:04:01,09
+That was not the case in previous versions of Python
+
+71
+00:04:01,09 --> 00:04:05,04
+and in fact, the standard library defined a special object
+
+72
+00:04:05,04 --> 00:04:08,08
+called order dict to preserve that order.
+
+73
+00:04:08,08 --> 00:04:11,07
+That is not necessary now.
+
+74
+00:04:11,07 --> 00:04:14,08
+Last, I want to mention sets.
+
+75
+00:04:14,08 --> 00:04:17,03
+You can think of them as bags of item,
+
+76
+00:04:17,03 --> 00:04:19,04
+which can be of mixed types
+
+77
+00:04:19,04 --> 00:04:22,06
+and which do not have duplications.
+
+78
+00:04:22,06 --> 00:04:26,03
+For instance, the continents.
+
+79
+00:04:26,03 --> 00:04:31,01
+Sets are written with braces, but without columns.
+
+80
+00:04:31,01 --> 00:04:33,08
+You can see that Africa only appears once,
+
+81
+00:04:33,08 --> 00:04:38,00
+even if we had it twice when we define the set.
+
+82
+00:04:38,00 --> 00:04:42,07
+We can check if an item exists in a set.
+
+83
+00:04:42,07 --> 00:04:45,06
+We can add items
+
+84
+00:04:45,06 --> 00:04:47,09
+or remove them
+
+85
+00:04:47,09 --> 00:04:50,08
+or loop over the set.
+
+86
+00:04:50,08 --> 00:04:54,04
+but there's no way to do indexing.
+
+87
+00:04:54,04 --> 00:04:58,06
+Sets and especially dicts are very important in Python,
+
+88
+00:04:58,06 --> 00:05:02,06
+since they underlie many aspects of the language itself.
+
+89
+00:05:02,06 --> 00:05:05,03
+For instance, the methods and attributes of classes
+
+90
+00:05:05,03 --> 00:05:07,07
+are stored internally in dicts,
+
+91
+00:05:07,07 --> 00:05:10,09
+and a dict key based interface is also used
+
+92
+00:05:10,09 --> 00:05:14,05
+in many third party packages, including pandas.
+
+93
+00:05:14,05 --> 00:05:17,00
+So it's very good to become familiar with them.
+

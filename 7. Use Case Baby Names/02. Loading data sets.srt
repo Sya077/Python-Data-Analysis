@@ -1,0 +1,256 @@
+1
+00:00:00,05 --> 00:00:02,06
+- [Instructor] You can download the Social Security
+
+2
+00:00:02,06 --> 00:00:05,06
+name data set from their website.
+
+3
+00:00:05,06 --> 00:00:09,00
+But I have also included the archive names.zip
+
+4
+00:00:09,00 --> 00:00:11,06
+in your exercise files.
+
+5
+00:00:11,06 --> 00:00:14,00
+We need to uncompress it,
+
+6
+00:00:14,00 --> 00:00:17,09
+which we can do in Python using the ZipFile module.
+
+7
+00:00:17,09 --> 00:00:20,03
+The interface is object oriented.
+
+8
+00:00:20,03 --> 00:00:22,04
+You first create a ZipFile object,
+
+9
+00:00:22,04 --> 00:00:26,01
+then called extract all in the current directory.
+
+10
+00:00:26,01 --> 00:00:27,09
+That's the dot.
+
+11
+00:00:27,09 --> 00:00:30,01
+Jupiter lets us browse the contents
+
+12
+00:00:30,01 --> 00:00:34,00
+of the current directory with ls.
+
+13
+00:00:34,00 --> 00:00:36,01
+We see that names.zip,
+
+14
+00:00:36,01 --> 00:00:39,03
+unpacked into a directory with many text files,
+
+15
+00:00:39,03 --> 00:00:41,09
+presumably one for every year.
+
+16
+00:00:41,09 --> 00:00:43,08
+Let's have a look at one.
+
+17
+00:00:43,08 --> 00:00:46,02
+We open it in read mode
+
+18
+00:00:46,02 --> 00:00:50,07
+and print out the first few lines.
+
+19
+00:00:50,07 --> 00:00:53,06
+It's a very simple comma separated format.
+
+20
+00:00:53,06 --> 00:00:57,01
+Name, sex, presumably F or M,
+
+21
+00:00:57,01 --> 00:01:01,07
+and then the number of babies born that year with that name.
+
+22
+00:01:01,07 --> 00:01:06,08
+Pandas read CSV shouldn't have any problems.
+
+23
+00:01:06,08 --> 00:01:08,08
+But we did do something wrong.
+
+24
+00:01:08,08 --> 00:01:11,05
+The first record in the file, Sofia,
+
+25
+00:01:11,05 --> 00:01:14,05
+was used to set the names of the columns.
+
+26
+00:01:14,05 --> 00:01:17,04
+We need to provide the column names explicitly,
+
+27
+00:01:17,04 --> 00:01:19,03
+since they're not in the file.
+
+28
+00:01:19,03 --> 00:01:24,02
+We've already done this for the Nobel data set.
+
+29
+00:01:24,02 --> 00:01:25,08
+Better.
+
+30
+00:01:25,08 --> 00:01:27,08
+We will need to load all the tables
+
+31
+00:01:27,08 --> 00:01:31,03
+and concatenate them in a single data frame.
+
+32
+00:01:31,03 --> 00:01:34,03
+To avoid confusing data from different years,
+
+33
+00:01:34,03 --> 00:01:36,06
+we can prepare the individual data frames
+
+34
+00:01:36,06 --> 00:01:40,06
+by adding a new column that specifies the year.
+
+35
+00:01:40,06 --> 00:01:45,05
+To do it on the fly, directly from the output of read CSV,
+
+36
+00:01:45,05 --> 00:01:47,06
+by chaining a method,
+
+37
+00:01:47,06 --> 00:01:51,07
+we can use data frame assign.
+
+38
+00:01:51,07 --> 00:01:57,07
+In this case, a new column year appears with value 2011.
+
+39
+00:01:57,07 --> 00:01:58,08
+Excellent.
+
+40
+00:01:58,08 --> 00:02:01,02
+We managed to load the file in a one liner,
+
+41
+00:02:01,02 --> 00:02:04,05
+so you can see that I'm going to use a comprehension
+
+42
+00:02:04,05 --> 00:02:08,04
+to concatenate all the data frames.
+
+43
+00:02:08,04 --> 00:02:11,00
+There are several things happening here.
+
+44
+00:02:11,00 --> 00:02:13,06
+So let's look at this carefully.
+
+45
+00:02:13,06 --> 00:02:18,09
+We loop over all the years between 1880 and 2018.
+
+46
+00:02:18,09 --> 00:02:23,00
+We build up the file name using an f-string,
+
+47
+00:02:23,00 --> 00:02:25,09
+and feed that to read CSV.
+
+48
+00:02:25,09 --> 00:02:28,02
+We specify the column names,
+
+49
+00:02:28,02 --> 00:02:31,06
+and we add the column that gives the correct year
+
+50
+00:02:31,06 --> 00:02:34,01
+from the loop variable.
+
+51
+00:02:34,01 --> 00:02:36,09
+Finally, we pass all the resulting data frames
+
+52
+00:02:36,09 --> 00:02:40,06
+to pd concat, pandas concat.
+
+53
+00:02:40,06 --> 00:02:41,09
+You see there are no brackets here,
+
+54
+00:02:41,09 --> 00:02:44,06
+so this is in fact a generator expression,
+
+55
+00:02:44,06 --> 00:02:46,02
+not the comprehension,
+
+56
+00:02:46,02 --> 00:02:50,07
+which pd concat accepts quite happily.
+
+57
+00:02:50,07 --> 00:02:55,03
+It's a very efficient way to build a data frame,
+
+58
+00:02:55,03 --> 00:02:56,03
+and it's all there.
+
+59
+00:02:56,03 --> 00:02:59,04
+Almost two million entries.
+
+60
+00:02:59,04 --> 00:03:02,04
+The year range is what we expect.
+
+61
+00:03:02,04 --> 00:03:07,04
+We can save the merged data frame using to CSV.
+
+62
+00:03:07,04 --> 00:03:09,04
+We don't need to say the index
+
+63
+00:03:09,04 --> 00:03:13,00
+and if we specify a file name that ends in .gz,
+
+64
+00:03:13,00 --> 00:03:16,00
+the resulting file will be automatically compressed.
+

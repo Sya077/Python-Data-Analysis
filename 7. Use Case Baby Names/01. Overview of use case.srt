@@ -1,0 +1,56 @@
+1
+00:00:00,05 --> 00:00:02,05
+- [Instructor] We are now going to apply pandas
+
+2
+00:00:02,05 --> 00:00:06,04
+to an intriguing real world use case.
+
+3
+00:00:06,04 --> 00:00:11,04
+We will analyze the U.S. Social Security Baby Name Catalog,
+
+4
+00:00:11,04 --> 00:00:15,04
+which reports the names given to male and female newborns
+
+5
+00:00:15,04 --> 00:00:18,03
+for every year since 1880.
+
+6
+00:00:18,03 --> 00:00:20,02
+This is a very simple data set,
+
+7
+00:00:20,02 --> 00:00:22,04
+but it's great fun to play with,
+
+8
+00:00:22,04 --> 00:00:25,08
+and it has been mined, analyzed, and visualized
+
+9
+00:00:25,08 --> 00:00:29,00
+in many publications and websites.
+
+10
+00:00:29,00 --> 00:00:31,06
+Specifically, I will show you how to load it,
+
+11
+00:00:31,06 --> 00:00:35,06
+how to track the popularity of a name across all years,
+
+12
+00:00:35,06 --> 00:00:39,07
+and how to extract the 10 most popular names every year.
+
+13
+00:00:39,07 --> 00:00:41,02
+Your challenge will be about finding
+
+14
+00:00:41,02 --> 00:00:44,00
+the most common unisex names.
+

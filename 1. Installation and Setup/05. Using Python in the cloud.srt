@@ -1,0 +1,180 @@
+1
+00:00:00,05 --> 00:00:02,05
+- [Instructor] An exciting, recent development
+
+2
+00:00:02,05 --> 00:00:06,02
+in the Python ecosystem is that it has become possible
+
+3
+00:00:06,02 --> 00:00:09,04
+to run notebooks in the cloud using services
+
+4
+00:00:09,04 --> 00:00:14,05
+such as Google Colaboratory and Microsoft Azure Notebooks.
+
+5
+00:00:14,05 --> 00:00:19,00
+With both, you get a rather functional environment for free.
+
+6
+00:00:19,00 --> 00:00:21,02
+If you'd like to follow along with this course
+
+7
+00:00:21,02 --> 00:00:23,04
+using Python in the cloud,
+
+8
+00:00:23,04 --> 00:00:26,05
+I suggest you use Azure Notebooks.
+
+9
+00:00:26,05 --> 00:00:28,06
+Let me show you how to.
+
+10
+00:00:28,06 --> 00:00:32,03
+We start at notebooks.azure.com.
+
+11
+00:00:32,03 --> 00:00:35,08
+We sign in, which you can do using
+
+12
+00:00:35,08 --> 00:00:40,09
+an existing Microsoft account or creating one.
+
+13
+00:00:40,09 --> 00:00:42,09
+You may also be asked to create a user name
+
+14
+00:00:42,09 --> 00:00:45,00
+for your profile.
+
+15
+00:00:45,00 --> 00:00:48,03
+In Azure Notebooks, notebooks are organized in projects,
+
+16
+00:00:48,03 --> 00:00:51,03
+so we create a new one.
+
+17
+00:00:51,03 --> 00:00:56,05
+I will call it Python data analysis.
+
+18
+00:00:56,05 --> 00:00:59,00
+The easiest way to get the exercise files
+
+19
+00:00:59,00 --> 00:01:02,07
+into Microsoft Azure is to upload the zip file
+
+20
+00:01:02,07 --> 00:01:05,00
+that contains all of them.
+
+21
+00:01:05,00 --> 00:01:09,03
+The Upload button is here on the top right.
+
+22
+00:01:09,03 --> 00:01:19,04
+So I go find a file and upload it.
+
+23
+00:01:19,04 --> 00:01:25,08
+To unzip the archive, I open the Azure terminal.
+
+24
+00:01:25,08 --> 00:01:31,08
+I type cd library to move into the project directory
+
+25
+00:01:31,08 --> 00:01:41,09
+and then unzip exercise\ files.zip.
+
+26
+00:01:41,09 --> 00:01:44,09
+This will take a moment.
+
+27
+00:01:44,09 --> 00:01:48,04
+Once it's done, we can type exit,
+
+28
+00:01:48,04 --> 00:01:52,00
+and close this tab.
+
+29
+00:01:52,00 --> 00:01:53,08
+If I refresh the window,
+
+30
+00:01:53,08 --> 00:01:57,07
+I see that the exercise files have appeared.
+
+31
+00:01:57,07 --> 00:02:00,00
+We are now ready for our course.
+
+32
+00:02:00,00 --> 00:02:04,03
+For instance, I can look inside the exercise files
+
+33
+00:02:04,03 --> 00:02:10,03
+for chapter two and select the first notebook.
+
+34
+00:02:10,03 --> 00:02:12,07
+Azure Notebooks can be somewhat slow when loading
+
+35
+00:02:12,07 --> 00:02:14,09
+and writing files, but don't worry.
+
+36
+00:02:14,09 --> 00:02:16,06
+You'll get there.
+
+37
+00:02:16,06 --> 00:02:21,04
+Also, as we speak, the default Python on Azure is 3.5,
+
+38
+00:02:21,04 --> 00:02:23,05
+which is too old for this course.
+
+39
+00:02:23,05 --> 00:02:25,07
+Hopefully that will change soon.
+
+40
+00:02:25,07 --> 00:02:28,08
+In the meantime, please remember to switch the kernel
+
+41
+00:02:28,08 --> 00:02:32,07
+to Python 3.6 after you open each notebook.
+
+42
+00:02:32,07 --> 00:02:37,04
+You do that from the Kernel menu, go into Change kernel,
+
+43
+00:02:37,04 --> 00:02:41,06
+and select Python 3.6
+
+44
+00:02:41,06 --> 00:02:45,05
+There are many options out there to use Python in the cloud.
+
+45
+00:02:45,05 --> 00:02:50,00
+Please feel free to use the one that works out best for you.
+

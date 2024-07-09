@@ -1,0 +1,268 @@
+1
+00:00:00,05 --> 00:00:03,04
+- [Instructor] In this chapter, we introduce NumPy,
+
+2
+00:00:03,04 --> 00:00:05,06
+a third-party package for Python
+
+3
+00:00:05,06 --> 00:00:08,07
+that extends the language with multi-dimensional arrays
+
+4
+00:00:08,07 --> 00:00:11,01
+that are fast, memory-efficient,
+
+5
+00:00:11,01 --> 00:00:14,06
+and that can manage very large data sets.
+
+6
+00:00:14,06 --> 00:00:18,00
+NumPy is an important part of the Python ecosystem.
+
+7
+00:00:18,00 --> 00:00:21,05
+It has become a fundamental package for data analysis,
+
+8
+00:00:21,05 --> 00:00:25,03
+and for any kind of mathematical application with Python.
+
+9
+00:00:25,03 --> 00:00:28,02
+Let's talk about how NumPy arrays are different
+
+10
+00:00:28,02 --> 00:00:31,07
+from Python containers, such as lists.
+
+11
+00:00:31,07 --> 00:00:35,01
+Python variables are often described as labels.
+
+12
+00:00:35,01 --> 00:00:37,06
+They are not little boxes in computer memory
+
+13
+00:00:37,06 --> 00:00:39,06
+ready to receive a value.
+
+14
+00:00:39,06 --> 00:00:42,04
+Rather, the values are independent objects
+
+15
+00:00:42,04 --> 00:00:44,03
+with their own space in memory,
+
+16
+00:00:44,03 --> 00:00:47,01
+and Python variables are labels or names
+
+17
+00:00:47,01 --> 00:00:49,09
+that are attached to the values.
+
+18
+00:00:49,09 --> 00:00:51,08
+So you can have more than one variable,
+
+19
+00:00:51,08 --> 00:00:54,02
+referring to the same object.
+
+20
+00:00:54,02 --> 00:00:56,05
+It's a very flexible mechanism,
+
+21
+00:00:56,05 --> 00:00:59,01
+and it makes it possible to have lists and dictionaries
+
+22
+00:00:59,01 --> 00:01:01,05
+with heterogenous elements.
+
+23
+00:01:01,05 --> 00:01:03,05
+However, it's not very efficient when we need to
+
+24
+00:01:03,05 --> 00:01:07,01
+deal with many values of the same type.
+
+25
+00:01:07,01 --> 00:01:09,08
+In that case, you want to reserve space in memory,
+
+26
+00:01:09,08 --> 00:01:12,04
+and store all the values side by side,
+
+27
+00:01:12,04 --> 00:01:16,04
+and that's exactly what a NumPy array is.
+
+28
+00:01:16,04 --> 00:01:18,01
+Organizing data in this way
+
+29
+00:01:18,01 --> 00:01:22,01
+is both faster and more efficient in memory.
+
+30
+00:01:22,01 --> 00:01:24,04
+It's also a necessary step if you want to
+
+31
+00:01:24,04 --> 00:01:26,05
+interface Python with other languages,
+
+32
+00:01:26,05 --> 00:01:28,04
+such as C or Fortran,
+
+33
+00:01:28,04 --> 00:01:33,01
+which count on data being laid out in memory like this.
+
+34
+00:01:33,01 --> 00:01:36,01
+In this slide, I'm showing you a schematic representation
+
+35
+00:01:36,01 --> 00:01:40,02
+of a one dimensional and a two dimensional array.
+
+36
+00:01:40,02 --> 00:01:43,06
+The actual data items sit side by side in memory,
+
+37
+00:01:43,06 --> 00:01:46,01
+and they all have the same size.
+
+38
+00:01:46,01 --> 00:01:47,07
+If there is one dimensional,
+
+39
+00:01:47,07 --> 00:01:50,08
+we identify items by a single index,
+
+40
+00:01:50,08 --> 00:01:54,05
+or two indices for a two dimensional array.
+
+41
+00:01:54,05 --> 00:01:57,04
+The index ranges from 0 to one minus one,
+
+42
+00:01:57,04 --> 00:02:01,02
+where N is the dimensional array.
+
+43
+00:02:01,02 --> 00:02:02,09
+In the case of a two dimensional array,
+
+44
+00:02:02,09 --> 00:02:05,08
+the dimensions can be different of course.
+
+45
+00:02:05,08 --> 00:02:09,00
+Since, as we said, all the data items in an array
+
+46
+00:02:09,00 --> 00:02:10,06
+need to have the same size,
+
+47
+00:02:10,06 --> 00:02:15,08
+NumPy needs to be very precise about identifying data types.
+
+48
+00:02:15,08 --> 00:02:19,01
+In fact, more precise than Python.
+
+49
+00:02:19,01 --> 00:02:21,03
+While Python has just one type of integer,
+
+50
+00:02:21,03 --> 00:02:23,01
+and one type of floating-point number,
+
+51
+00:02:23,01 --> 00:02:25,06
+NumPY has several.
+
+52
+00:02:25,06 --> 00:02:28,05
+NumPY identifies different types of integers,
+
+53
+00:02:28,05 --> 00:02:29,09
+dependent on the number of bits
+
+54
+00:02:29,09 --> 00:02:31,05
+that each of them takes up in memory,
+
+55
+00:02:31,05 --> 00:02:37,07
+int8, int16, int32, and int64 the most common.
+
+56
+00:02:37,07 --> 00:02:41,04
+There are also unsigned version of the integers.
+
+57
+00:02:41,04 --> 00:02:42,08
+As for floating-point numbers,
+
+58
+00:02:42,08 --> 00:02:49,08
+we have float16, 32, 64, and on some platforms 128.
+
+59
+00:02:49,08 --> 00:02:53,01
+The most common is float64.
+
+60
+00:02:53,01 --> 00:02:55,03
+There are other more special I-Types,
+
+61
+00:02:55,03 --> 00:02:59,06
+complex numbers, booleans, true or false,
+
+62
+00:02:59,06 --> 00:03:02,05
+bytes, unicode strings,
+
+63
+00:03:02,05 --> 00:03:05,02
+for which you need to specify lengths,
+
+64
+00:03:05,02 --> 00:03:07,07
+void, used for record arrays,
+
+65
+00:03:07,07 --> 00:03:10,00
+and object, which is in effect a pointer
+
+66
+00:03:10,00 --> 00:03:12,06
+to arbitrary Python objects.
+
+67
+00:03:12,06 --> 00:03:15,00
+So let's see NumPY arrays in action.
+

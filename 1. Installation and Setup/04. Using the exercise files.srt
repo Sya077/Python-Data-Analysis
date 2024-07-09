@@ -1,0 +1,124 @@
+1
+00:00:00,05 --> 00:00:03,01
+- [Instructor] For most of the videos in this course,
+
+2
+00:00:03,01 --> 00:00:05,08
+we will be working through one of the Jupyter Notebooks
+
+3
+00:00:05,08 --> 00:00:07,06
+that I prepare for you.
+
+4
+00:00:07,06 --> 00:00:10,01
+For each notebook, we will go through the path
+
+5
+00:00:10,01 --> 00:00:12,04
+and code that it contains.
+
+6
+00:00:12,04 --> 00:00:14,04
+We will discuss what the code does
+
+7
+00:00:14,04 --> 00:00:16,02
+and why I wrote it that way.
+
+8
+00:00:16,02 --> 00:00:20,04
+We will execute it and examine the resulting output.
+
+9
+00:00:20,04 --> 00:00:23,05
+At any time, you're welcome to pause the video,
+
+10
+00:00:23,05 --> 00:00:26,00
+inspect the code, make changes
+
+11
+00:00:26,00 --> 00:00:28,06
+and run your own experiments.
+
+12
+00:00:28,06 --> 00:00:32,02
+All the notebooks are collected in your exercise files,
+
+13
+00:00:32,02 --> 00:00:35,00
+organized by course chapter.
+
+14
+00:00:35,00 --> 00:00:40,09
+They are the files with .ipynb file ending.
+
+15
+00:00:40,09 --> 00:00:43,05
+You will also see some of the data files
+
+16
+00:00:43,05 --> 00:00:46,02
+that we will be analyzing.
+
+17
+00:00:46,02 --> 00:00:49,09
+In Chapter Five, I have included a subfolder
+
+18
+00:00:49,09 --> 00:00:52,03
+named Downloaded.
+
+19
+00:00:52,03 --> 00:00:54,04
+These are files that we will download
+
+20
+00:00:54,04 --> 00:00:57,00
+from the web using Python,
+
+21
+00:00:57,00 --> 00:00:58,07
+but I am including them here
+
+22
+00:00:58,07 --> 00:01:02,07
+in case something goes wrong with the download.
+
+23
+00:01:02,07 --> 00:01:04,07
+We open a notebook by finding it
+
+24
+00:01:04,07 --> 00:01:08,07
+within the Jupyter Notebook file browser
+
+25
+00:01:08,07 --> 00:01:11,01
+and clicking on it.
+
+26
+00:01:11,01 --> 00:01:14,04
+The notebook cell that we're discussing and running
+
+27
+00:01:14,04 --> 00:01:18,05
+will always be the one enclosed by a blue or green box.
+
+28
+00:01:18,05 --> 00:01:20,02
+Once we're done with the notebook,
+
+29
+00:01:20,02 --> 00:01:24,06
+you can close the browser tab
+
+30
+00:01:24,06 --> 00:01:28,05
+and shut down the notebook in the Jupyter file browser
+
+31
+00:01:28,05 --> 00:01:32,00
+by clicking on the box and then clicking Shutdown.
+

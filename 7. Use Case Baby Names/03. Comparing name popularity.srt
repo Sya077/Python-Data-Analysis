@@ -1,0 +1,348 @@
+1
+00:00:00,05 --> 00:00:03,05
+- [Instructor] We are ready to start analyzing this data.
+
+2
+00:00:03,05 --> 00:00:04,03
+How we load and look
+
+3
+00:00:04,03 --> 00:00:09,04
+at the combined data frame we just created.
+
+4
+00:00:09,04 --> 00:00:12,07
+We want to examine the change in popularity of a name.
+
+5
+00:00:12,07 --> 00:00:15,03
+So we need to reframe the data in a way,
+
+6
+00:00:15,03 --> 00:00:18,02
+that will make this easier.
+
+7
+00:00:18,02 --> 00:00:19,06
+We will use a multi-index.
+
+8
+00:00:19,06 --> 00:00:22,06
+We will index the date on sex first,
+
+9
+00:00:22,06 --> 00:00:25,05
+then name, and then year.
+
+10
+00:00:25,05 --> 00:00:28,05
+And we will also sort the index.
+
+11
+00:00:28,05 --> 00:00:31,01
+Getting the data for any given name
+
+12
+00:00:31,01 --> 00:00:33,02
+is then a simple exercise
+
+13
+00:00:33,02 --> 00:00:36,08
+of indexing with dot loc.
+
+14
+00:00:36,08 --> 00:00:39,05
+For instance Mary,
+
+15
+00:00:39,05 --> 00:00:41,06
+this series is ready to plot.
+
+16
+00:00:41,06 --> 00:00:45,02
+Notice how Metro-lib automatically uses
+
+17
+00:00:45,02 --> 00:00:47,09
+the index to set the x-axis.
+
+18
+00:00:47,09 --> 00:00:50,00
+We see two peaks.
+
+19
+00:00:50,00 --> 00:00:54,05
+At approximately 1920 and 1950.
+
+20
+00:00:54,05 --> 00:00:56,03
+It probably makes sense also
+
+21
+00:00:56,03 --> 00:00:58,07
+to consider the frequency of a name as a fraction
+
+22
+00:00:58,07 --> 00:01:02,01
+of the number of babies born in a year.
+
+23
+00:01:02,01 --> 00:01:04,01
+To get that, we can apply group by
+
+24
+00:01:04,01 --> 00:01:10,03
+on the un-indexed data frame and take the sum.
+
+25
+00:01:10,03 --> 00:01:11,07
+Then we can normalize Mary
+
+26
+00:01:11,07 --> 00:01:15,04
+by all the newborns in every year.
+
+27
+00:01:15,04 --> 00:01:17,05
+So as a percentage of all babies,
+
+28
+00:01:17,05 --> 00:01:18,09
+Mary was actually more popular
+
+29
+00:01:18,09 --> 00:01:21,07
+at the beginning of the 20th century.
+
+30
+00:01:21,07 --> 00:01:23,01
+But there were altogether
+
+31
+00:01:23,01 --> 00:01:26,06
+more Marys born in the 1920s and 50s.
+
+32
+00:01:26,06 --> 00:01:31,07
+For simplicity, we continue with unnormalized counts.
+
+33
+00:01:31,07 --> 00:01:33,06
+So let's make a generic function plot name
+
+34
+00:01:33,06 --> 00:01:37,02
+to make a plot like this.
+
+35
+00:01:37,02 --> 00:01:39,01
+In another function compare names
+
+36
+00:01:39,01 --> 00:01:42,05
+to plot a few names together.
+
+37
+00:01:42,05 --> 00:01:45,06
+You see that we pass a list of names through compare names.
+
+38
+00:01:45,06 --> 00:01:48,08
+We look over the list called plot name for each of them
+
+39
+00:01:48,08 --> 00:01:51,09
+and then add a legend, which is always good.
+
+40
+00:01:51,09 --> 00:01:57,08
+Let's for instance compare Michael, John, David and Martin.
+
+41
+00:01:57,08 --> 00:02:02,06
+Or for girls Emily, Anna, Claire and Elizabeth.
+
+42
+00:02:02,06 --> 00:02:07,01
+It's already a popularity contest that we make in here.
+
+43
+00:02:07,01 --> 00:02:08,08
+Another interesting investigations
+
+44
+00:02:08,08 --> 00:02:11,08
+is to compare variance of the same name.
+
+45
+00:02:11,08 --> 00:02:13,09
+For instance, there are two spellings of Claire.
+
+46
+00:02:13,09 --> 00:02:16,06
+There's an older version Clara,
+
+47
+00:02:16,06 --> 00:02:18,06
+and an Italian and Irish spelling
+
+48
+00:02:18,06 --> 00:02:21,02
+for the pronunciation Ciara.
+
+49
+00:02:21,02 --> 00:02:23,05
+Here's the plot.
+
+50
+00:02:23,05 --> 00:02:28,02
+Notice how Metro-lib tries to put the legend out of the way.
+
+51
+00:02:28,02 --> 00:02:30,01
+Claire is now dominant,
+
+52
+00:02:30,01 --> 00:02:32,03
+but Clara is having a resurgance
+
+53
+00:02:32,03 --> 00:02:35,01
+after having been the dominant variant
+
+54
+00:02:35,01 --> 00:02:38,06
+at the beginning of the 20th century.
+
+55
+00:02:38,06 --> 00:02:41,01
+We can make a slightly different cumulative
+
+56
+00:02:41,01 --> 00:02:44,03
+or stacked plot that adds up the counts
+
+57
+00:02:44,03 --> 00:02:46,01
+on top of each other.
+
+58
+00:02:46,01 --> 00:02:49,06
+For that, we need a table of the frequencies
+
+59
+00:02:49,06 --> 00:02:52,03
+for all the variance as a function of time.
+
+60
+00:02:52,03 --> 00:02:55,07
+That would be an exercise in multi-indexing.
+
+61
+00:02:55,07 --> 00:02:59,06
+We start by selecting all the Claires
+
+62
+00:02:59,06 --> 00:03:03,07
+and then we can apply data frame and stack
+
+63
+00:03:03,07 --> 00:03:07,07
+to move one of the index levels to a column name.
+
+64
+00:03:07,07 --> 00:03:13,04
+In this case the year is level two of the multi-index.
+
+65
+00:03:13,04 --> 00:03:15,06
+So the years become the columns.
+
+66
+00:03:15,06 --> 00:03:17,06
+I must say that sometimes it's hard to make sense
+
+67
+00:03:17,06 --> 00:03:22,00
+of what unstack does, so expect some trial and error.
+
+68
+00:03:22,00 --> 00:03:24,04
+By contrast, unstacking level one
+
+69
+00:03:24,04 --> 00:03:30,02
+would have made columns corresponding to the name variance.
+
+70
+00:03:30,02 --> 00:03:32,03
+We can now try this stack plot.
+
+71
+00:03:32,03 --> 00:03:34,05
+On the x-axis we will have the years
+
+72
+00:03:34,05 --> 00:03:37,03
+just a simple range will suffice.
+
+73
+00:03:37,03 --> 00:03:43,07
+And on the y-axis, the stacked values.
+
+74
+00:03:43,07 --> 00:03:45,03
+This works but we see that the plot
+
+75
+00:03:45,03 --> 00:03:48,04
+is truncated around 1974.
+
+76
+00:03:48,04 --> 00:03:52,03
+That must be because of some of the Nans in the table,
+
+77
+00:03:52,03 --> 00:03:54,09
+which do not lend themselves to be summed up.
+
+78
+00:03:54,09 --> 00:03:57,02
+That's easy to fix
+
+79
+00:03:57,02 --> 00:04:00,00
+with data frame fill and A.
+
+80
+00:04:00,00 --> 00:04:03,01
+We'll replace the Nans with zeros.
+
+81
+00:04:03,01 --> 00:04:06,00
+And here's the final plot.
+
+82
+00:04:06,00 --> 00:04:07,07
+I have also added a legend,
+
+83
+00:04:07,07 --> 00:04:10,09
+seeded by the labels given to stack plot.
+
+84
+00:04:10,09 --> 00:04:13,00
+And I've restricted the x-axis,
+
+85
+00:04:13,00 --> 00:04:15,08
+quite nice and informative.
+
+86
+00:04:15,08 --> 00:04:18,05
+Except perhaps for the garish different colors
+
+87
+00:04:18,05 --> 00:04:20,00
+chosen by map plot lib.
+

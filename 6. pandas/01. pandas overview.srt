@@ -1,0 +1,92 @@
+1
+00:00:00,05 --> 00:00:03,02
+- [Instructor] Pandas has gained broad acceptance
+
+2
+00:00:03,02 --> 00:00:04,04
+in the Python community
+
+3
+00:00:04,04 --> 00:00:08,02
+as the data analysis tool for Python.
+
+4
+00:00:08,02 --> 00:00:10,02
+As of January 2020,
+
+5
+00:00:10,02 --> 00:00:12,08
+it should reach version 1.0 very soon,
+
+6
+00:00:12,08 --> 00:00:15,09
+signaling the stability of its API,
+
+7
+00:00:15,09 --> 00:00:18,07
+its programming interface.
+
+8
+00:00:18,07 --> 00:00:23,00
+Pandas is built on top of NumPy so it's very fast.
+
+9
+00:00:23,00 --> 00:00:26,04
+And it extends NumPy in ways that are extremely useful
+
+10
+00:00:26,04 --> 00:00:29,02
+to data analysis.
+
+11
+00:00:29,02 --> 00:00:33,08
+For instance it attaches labels to table columns and rows.
+
+12
+00:00:33,08 --> 00:00:36,05
+It lets us access data using indexes
+
+13
+00:00:36,05 --> 00:00:38,08
+built from any variable.
+
+14
+00:00:38,08 --> 00:00:41,01
+It allows us to modify table structure
+
+15
+00:00:41,01 --> 00:00:43,06
+by adding and dropping columns
+
+16
+00:00:43,06 --> 00:00:47,00
+and by performing other transformations.
+
+17
+00:00:47,00 --> 00:00:50,05
+It recognizes many common data formats.
+
+18
+00:00:50,05 --> 00:00:54,00
+It handles missing data easily.
+
+19
+00:00:54,00 --> 00:00:58,03
+It implements database operations such as joins
+
+20
+00:00:58,03 --> 00:01:01,01
+and it can even make plots.
+
+21
+00:01:01,01 --> 00:01:02,08
+So if you want to do data analysis
+
+22
+00:01:02,08 --> 00:01:04,09
+or data science with Python,
+
+23
+00:01:04,09 --> 00:01:08,00
+I really recommend that you learn Pandas.
+

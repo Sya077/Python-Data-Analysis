@@ -1,0 +1,472 @@
+1
+00:00:00,05 --> 00:00:03,01
+- [Instructor] The two key objects in pandas
+
+2
+00:00:03,01 --> 00:00:05,09
+are the DataFrame and the Series.
+
+3
+00:00:05,09 --> 00:00:09,02
+A DataFrame is basically a table of data.
+
+4
+00:00:09,02 --> 00:00:14,07
+Each column has a name and an assigned data type as a NumPy.
+
+5
+00:00:14,07 --> 00:00:18,01
+In addition though, the DataFrame has an index,
+
+6
+00:00:18,01 --> 00:00:22,03
+which is not necessarily the ordinal number of the row.
+
+7
+00:00:22,03 --> 00:00:24,08
+In this example, where the columns contain name,
+
+8
+00:00:24,08 --> 00:00:28,02
+date of birth and city, the index could be
+
+9
+00:00:28,02 --> 00:00:33,03
+the social security number or an alphanumerical employee ID.
+
+10
+00:00:33,03 --> 00:00:36,03
+A Series is effectively a single column
+
+11
+00:00:36,03 --> 00:00:39,08
+from a DataFrame with its own index.
+
+12
+00:00:39,08 --> 00:00:42,03
+Having an index makes it more powerful
+
+13
+00:00:42,03 --> 00:00:45,01
+than a simple NumPy array.
+
+14
+00:00:45,01 --> 00:00:47,07
+For instance, if we have two time Series
+
+15
+00:00:47,07 --> 00:00:51,09
+that have partially overlapping indices, times,
+
+16
+00:00:51,09 --> 00:00:55,00
+we can still combine them and pandas will figure out
+
+17
+00:00:55,00 --> 00:00:58,03
+which entries it can actually compute.
+
+18
+00:00:58,03 --> 00:01:01,01
+Just as for NumPy arrays the easiest way
+
+19
+00:01:01,01 --> 00:01:04,05
+to get a pandas DataFrame is to load it from a file.
+
+20
+00:01:04,05 --> 00:01:06,04
+And pandas can read and write
+
+21
+00:01:06,04 --> 00:01:11,00
+an even larger variety of formats than NumPy
+
+22
+00:01:11,00 --> 00:01:15,02
+These include ASCII tables, json, Excel,
+
+23
+00:01:15,02 --> 00:01:17,06
+the hierarchical data format HDF
+
+24
+00:01:17,06 --> 00:01:22,04
+using many scientific application, SAS, SAS, Strata,
+
+25
+00:01:22,04 --> 00:01:27,09
+Big data storage formats, such as Apache Feather and Parquet
+
+26
+00:01:27,09 --> 00:01:32,01
+SQL and even HTML tables, which is great
+
+27
+00:01:32,01 --> 00:01:35,05
+if you want to scrape data from a website.
+
+28
+00:01:35,05 --> 00:01:37,09
+In this table, I show you the formats
+
+29
+00:01:37,09 --> 00:01:41,08
+with the pandas functions that read and write them.
+
+30
+00:01:41,08 --> 00:01:45,02
+Some of them may require the assistance of another package
+
+31
+00:01:45,02 --> 00:01:48,01
+that you need to install separately.
+
+32
+00:01:48,01 --> 00:01:50,07
+We start with a simple text file.
+
+33
+00:01:50,07 --> 00:01:55,09
+Nobels.CSV, which contains a list of Nobel Laureates
+
+34
+00:01:55,09 --> 00:01:57,02
+with a year in discipline
+
+35
+00:01:57,02 --> 00:02:00,02
+in which they were awarded their prize.
+
+36
+00:02:00,02 --> 00:02:03,07
+We can have a look.
+
+37
+00:02:03,07 --> 00:02:08,04
+This is quite simple, the values are separated by commas.
+
+38
+00:02:08,04 --> 00:02:13,01
+Pandas read CSV with this without breaking a sweat.
+
+39
+00:02:13,01 --> 00:02:15,04
+We do need to provide names for the columns
+
+40
+00:02:15,04 --> 00:02:18,09
+since the file itself doesn't have that information.
+
+41
+00:02:18,09 --> 00:02:20,07
+Read CSV has many other options
+
+42
+00:02:20,07 --> 00:02:23,09
+including specifying separators other than commerce,
+
+43
+00:02:23,09 --> 00:02:28,01
+skipping columns or rows, converting dates and more.
+
+44
+00:02:28,01 --> 00:02:29,04
+Let's look at the DataFrame.
+
+45
+00:02:29,04 --> 00:02:33,04
+The method Info gives us basic information.
+
+46
+00:02:33,04 --> 00:02:37,08
+And the method Head prints the first few rows,
+
+47
+00:02:37,08 --> 00:02:41,01
+Tail the last.
+
+48
+00:02:41,01 --> 00:02:45,06
+We have a total of 950 records.
+
+49
+00:02:45,06 --> 00:02:48,00
+And we see that indeed the columns are named year
+
+50
+00:02:48,00 --> 00:02:50,09
+discipline and the Nobelist.
+
+51
+00:02:50,09 --> 00:02:53,06
+The data types are integer for the year
+
+52
+00:02:53,06 --> 00:02:55,09
+and Python object for discipline and Nobelist.
+
+53
+00:02:55,09 --> 00:02:58,05
+That's an important observation while in NumPy,
+
+54
+00:02:58,05 --> 00:03:03,07
+we represent strings as fixed with runs of characters.
+
+55
+00:03:03,07 --> 00:03:06,07
+In panda strings are effectively the immutable strings
+
+56
+00:03:06,07 --> 00:03:10,01
+of Python, which are more versatile.
+
+57
+00:03:10,01 --> 00:03:12,06
+As I mentioned, the index plays a very important role
+
+58
+00:03:12,06 --> 00:03:15,08
+for data frames, but this one in particular,
+
+59
+00:03:15,08 --> 00:03:18,09
+is a boring Numerical index.
+
+60
+00:03:18,09 --> 00:03:22,04
+To grab the individual columns, which become Series,
+
+61
+00:03:22,04 --> 00:03:26,03
+we use a dict like syntax with brackets,
+
+62
+00:03:26,03 --> 00:03:31,00
+or a class like syntax with dot.
+
+63
+00:03:31,00 --> 00:03:34,01
+Either way, the result is a pandas series,
+
+64
+00:03:34,01 --> 00:03:37,01
+the object there represents a column.
+
+65
+00:03:37,01 --> 00:03:40,07
+Consequently, the series has a name, ID type,
+
+66
+00:03:40,07 --> 00:03:45,04
+and it carries with it the index of the original DataFrame.
+
+67
+00:03:45,04 --> 00:03:48,04
+If we need a naked NumPy array of the values,
+
+68
+00:03:48,04 --> 00:03:51,07
+we can still get it with dot values.
+
+69
+00:03:51,07 --> 00:03:53,09
+Here's a small slice.
+
+70
+00:03:53,09 --> 00:03:57,06
+Sometimes it's useful to get a list or really a NumPy array
+
+71
+00:03:57,06 --> 00:04:01,01
+of all the unique values in a column.
+
+72
+00:04:01,01 --> 00:04:04,01
+Other times, it's useful to have counts of the times
+
+73
+00:04:04,01 --> 00:04:06,07
+each item appears.
+
+74
+00:04:06,07 --> 00:04:09,03
+This accounting confirms that three scientists
+
+75
+00:04:09,03 --> 00:04:12,00
+were awarded two prizes.
+
+76
+00:04:12,00 --> 00:04:15,00
+To select records, we can use fancy indexing,
+
+77
+00:04:15,00 --> 00:04:19,00
+building a Boolean expression that involves the columns.
+
+78
+00:04:19,00 --> 00:04:22,04
+For instance, select the Nobels in Physics.
+
+79
+00:04:22,04 --> 00:04:26,02
+Or you can use the convenient and fast Query Interface
+
+80
+00:04:26,02 --> 00:04:29,09
+which takes a logical expression given as a string.
+
+81
+00:04:29,09 --> 00:04:32,07
+We have to mind our quotes here making sure that we use
+
+82
+00:04:32,07 --> 00:04:34,07
+single quotes for the query
+
+83
+00:04:34,07 --> 00:04:40,00
+and double quotes for any values inside it.
+
+84
+00:04:40,00 --> 00:04:42,05
+Sometimes it's not evident how to write
+
+85
+00:04:42,05 --> 00:04:44,09
+a filtering operation.
+
+86
+00:04:44,09 --> 00:04:46,09
+For instance, if we seek all the Nobelists
+
+87
+00:04:46,09 --> 00:04:49,04
+whose name contain Curie, we like to write
+
+88
+00:04:49,04 --> 00:04:53,07
+something like this, Nobel's fancy indexed by Curie
+
+89
+00:04:53,07 --> 00:04:59,08
+in Nobel's Nobelist but that fails quite spectacularly.
+
+90
+00:04:59,08 --> 00:05:03,01
+Instead we need to dig down in the string methods
+
+91
+00:05:03,01 --> 00:05:06,08
+supported by the series to find Contains,
+
+92
+00:05:06,08 --> 00:05:09,09
+which does what we need.
+
+93
+00:05:09,09 --> 00:05:12,00
+The selection confers incredible winning streak
+
+94
+00:05:12,00 --> 00:05:13,02
+of the Curie family.
+
+95
+00:05:13,02 --> 00:05:14,09
+Marie her husband Pierre,
+
+96
+00:05:14,09 --> 00:05:18,07
+her daughter Irine and her son in law Frederic
+
+97
+00:05:18,07 --> 00:05:21,00
+Be sure how to create a data frame yourself.
+
+98
+00:05:21,00 --> 00:05:23,09
+First from a NumPy record array.
+
+99
+00:05:23,09 --> 00:05:26,02
+For instance, the David Bowie discography
+
+100
+00:05:26,02 --> 00:05:29,08
+that we use as an example in chapter four.
+
+101
+00:05:29,08 --> 00:05:33,02
+This is almost like cheating because NumPy record arrays
+
+102
+00:05:33,02 --> 00:05:37,04
+are in fact the very back end of pandas.
+
+103
+00:05:37,04 --> 00:05:39,03
+Nevertheless, the fixed length strings
+
+104
+00:05:39,03 --> 00:05:44,06
+are converted to Python objects, when we get a DataFrame.
+
+105
+00:05:44,06 --> 00:05:47,03
+Starting from scratch, we may build a DataFrame
+
+106
+00:05:47,03 --> 00:05:50,02
+from a list of dictionaries, which means
+
+107
+00:05:50,02 --> 00:05:53,06
+that we'll be repeating the column names over and over.
+
+108
+00:05:53,06 --> 00:05:59,00
+Or from a list of tuples by providing names for the columns
+
+109
+00:05:59,00 --> 00:06:01,09
+here title and top rank.
+
+110
+00:06:01,09 --> 00:06:05,02
+Name tuples would also work great here.
+
+111
+00:06:05,02 --> 00:06:08,06
+Otherwise, we can build the DataFrame in the other direction
+
+112
+00:06:08,06 --> 00:06:15,02
+from a dictionary of vectors or lists.
+
+113
+00:06:15,02 --> 00:06:17,03
+Here I'm just copying information
+
+114
+00:06:17,03 --> 00:06:21,07
+from the NumPy record array to make actual lists.
+
+115
+00:06:21,07 --> 00:06:25,02
+And then I feed them to DataFrame.
+
+116
+00:06:25,02 --> 00:06:29,05
+We have DataFrames, let's move on to using them.
+
+117
+00:06:29,05 --> 00:06:32,09
+Now that we know how to load or make DataFrames,
+
+118
+00:06:32,09 --> 00:06:35,00
+let's do something interesting with them.
+

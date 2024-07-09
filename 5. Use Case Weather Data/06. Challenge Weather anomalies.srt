@@ -1,0 +1,60 @@
+1
+00:00:00,02 --> 00:00:05,06
+(upbeat chime)
+
+2
+00:00:05,06 --> 00:00:06,09
+- For your challenge,
+
+3
+00:00:06,09 --> 00:00:10,06
+I'm asking you to plot the temperature anomaly for New York
+
+4
+00:00:10,06 --> 00:00:14,01
+by computing yearly temperature averages for each year
+
+5
+00:00:14,01 --> 00:00:16,09
+and comparing those with a mid-century average
+
+6
+00:00:16,09 --> 00:00:21,06
+in the 1945-1955 decade.
+
+7
+00:00:21,06 --> 00:00:23,03
+You can make yearly averages
+
+8
+00:00:23,03 --> 00:00:25,01
+just as we did for the title
+
+9
+00:00:25,01 --> 00:00:26,03
+of the New York Times inspired plot.
+
+10
+00:00:26,03 --> 00:00:29,09
+TMIN plus TMAX over two
+
+11
+00:00:29,09 --> 00:00:32,03
+averaged across the year.
+
+12
+00:00:32,03 --> 00:00:34,05
+To make the mid-century average,
+
+13
+00:00:34,05 --> 00:00:40,00
+just sum up results for 1945 through 1955
+
+14
+00:00:40,00 --> 00:00:42,06
+and then take the difference.
+
+15
+00:00:42,06 --> 00:00:46,00
+This challenge should take about 15 minutes.
+

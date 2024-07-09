@@ -1,0 +1,88 @@
+1
+00:00:00,05 --> 00:00:01,07
+- [Instructor] In this chapter,
+
+2
+00:00:01,07 --> 00:00:03,07
+we are going to experiment with NumPy
+
+3
+00:00:03,07 --> 00:00:06,02
+on a real world use case,
+
+4
+00:00:06,02 --> 00:00:08,06
+analyzing weather data from NOAA,
+
+5
+00:00:08,06 --> 00:00:12,05
+the National Oceanic and Atmosphere Administration.
+
+6
+00:00:12,05 --> 00:00:18,07
+The GHCN, the Global Historical Climatology Network Daily
+
+7
+00:00:18,07 --> 00:00:22,02
+is an integrated database of daily climate summary
+
+8
+00:00:22,02 --> 00:00:26,07
+from land surface stations across the globe.
+
+9
+00:00:26,07 --> 00:00:29,06
+Many in big cities for instance.
+
+10
+00:00:29,06 --> 00:00:31,04
+Climate summaries, in this case,
+
+11
+00:00:31,04 --> 00:00:33,00
+means variables
+
+12
+00:00:33,00 --> 00:00:35,08
+such as the minimum and maximum temperatures,
+
+13
+00:00:35,08 --> 00:00:39,02
+the total precipitation, and so on.
+
+14
+00:00:39,02 --> 00:00:41,03
+The data files that we will be using
+
+15
+00:00:41,03 --> 00:00:44,05
+can be obtained from the NOAA website.
+
+16
+00:00:44,05 --> 00:00:47,03
+Together we will download a station list
+
+17
+00:00:47,03 --> 00:00:51,01
+and use it to locate temperature data for cities.
+
+18
+00:00:51,01 --> 00:00:54,07
+We will load the data files, fill missing values,
+
+19
+00:00:54,07 --> 00:00:56,08
+and smooth time series.
+
+20
+00:00:56,08 --> 00:00:57,07
+Finally,
+
+21
+00:00:57,07 --> 00:01:00,04
+we will create a visualization of daily temperatures
+
+22
+00:01:00,04 --> 00:01:04,00
+inspired by the New York Times weather plots.
+

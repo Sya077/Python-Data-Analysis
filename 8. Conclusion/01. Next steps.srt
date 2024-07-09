@@ -1,0 +1,88 @@
+1
+00:00:00,08 --> 00:00:01,08
+- Well done.
+
+2
+00:00:01,08 --> 00:00:03,05
+Thank you for following along
+
+3
+00:00:03,05 --> 00:00:05,08
+through some rather challenging material.
+
+4
+00:00:05,08 --> 00:00:08,05
+You are at the start of your road to mastery.
+
+5
+00:00:08,05 --> 00:00:10,09
+You can now move on to my more advanced courses
+
+6
+00:00:10,09 --> 00:00:13,00
+on programming efficiently in Python
+
+7
+00:00:13,00 --> 00:00:15,06
+and on statistics with Python.
+
+8
+00:00:15,06 --> 00:00:17,04
+Back to the topic of this course,
+
+9
+00:00:17,04 --> 00:00:21,01
+here are some resources that can help you learn more.
+
+10
+00:00:21,01 --> 00:00:23,08
+You can find the answer to any question about Python
+
+11
+00:00:23,08 --> 00:00:26,09
+or about NumPy, Matploylib and pandas
+
+12
+00:00:26,09 --> 00:00:29,01
+on the official websites.
+
+13
+00:00:29,01 --> 00:00:30,08
+These packages are also discussed in
+
+14
+00:00:30,08 --> 00:00:35,01
+"Python Data Science Handbook" by Jake Vanderplas,
+
+15
+00:00:35,01 --> 00:00:38,08
+a very insightful and no-nonsense textbook.
+
+16
+00:00:38,08 --> 00:00:40,06
+If you get stuck, look for help
+
+17
+00:00:40,06 --> 00:00:43,07
+in an internet forum such as Stack Overflow.
+
+18
+00:00:43,07 --> 00:00:46,01
+You'll find that Python has a very helpful
+
+19
+00:00:46,01 --> 00:00:48,06
+and supportive community.
+
+20
+00:00:48,06 --> 00:00:51,01
+Many have said that the best thing about Python
+
+21
+00:00:51,01 --> 00:00:53,09
+is that it's a language that makes you happy.
+
+22
+00:00:53,09 --> 00:00:58,00
+I agree so have fun and do great things.
+

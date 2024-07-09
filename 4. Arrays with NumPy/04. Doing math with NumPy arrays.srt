@@ -1,0 +1,408 @@
+1
+00:00:00,05 --> 00:00:02,06
+- [Instructor] NumPy is extremely useful
+
+2
+00:00:02,06 --> 00:00:04,08
+in numerical calculations.
+
+3
+00:00:04,08 --> 00:00:06,09
+That's because in addition to packing numbers
+
+4
+00:00:06,09 --> 00:00:09,06
+efficient in memory, NumPy makes it easy
+
+5
+00:00:09,06 --> 00:00:11,05
+to perform mathematical operations
+
+6
+00:00:11,05 --> 00:00:14,08
+with entire arrays.
+
+7
+00:00:14,08 --> 00:00:17,09
+For instance, in a study of mathematical functions,
+
+8
+00:00:17,09 --> 00:00:21,01
+we may start with a vector of equally-spaced real values
+
+9
+00:00:21,01 --> 00:00:25,04
+between say zero and five times pi.
+
+10
+00:00:25,04 --> 00:00:26,04
+Here it is.
+
+11
+00:00:26,04 --> 00:00:29,03
+Note that with the list space, the extreme of zero
+
+12
+00:00:29,03 --> 00:00:32,01
+and five pi are included.
+
+13
+00:00:32,01 --> 00:00:34,02
+Then we may want to complete the sine
+
+14
+00:00:34,02 --> 00:00:35,07
+of all these values.
+
+15
+00:00:35,07 --> 00:00:37,02
+We cannot do this with a function
+
+16
+00:00:37,02 --> 00:00:38,09
+in the standard math library.
+
+17
+00:00:38,09 --> 00:00:41,04
+Math dot sin.
+
+18
+00:00:41,04 --> 00:00:43,09
+But we can with the NumPy version,
+
+19
+00:00:43,09 --> 00:00:47,05
+which is called the universal function for this reason.
+
+20
+00:00:47,05 --> 00:00:53,01
+It can operate on any array, in element by element fashion.
+
+21
+00:00:53,01 --> 00:00:54,08
+There is always another NumPy array
+
+22
+00:00:54,08 --> 00:00:57,09
+with the same shape as X.
+
+23
+00:00:57,09 --> 00:01:02,08
+Using map dot lib, I can now plot sine X against X.
+
+24
+00:01:02,08 --> 00:01:06,06
+Specifying first the coordinates along the horizontal axis
+
+25
+00:01:06,06 --> 00:01:09,04
+and then the coordinates along the vertical.
+
+26
+00:01:09,04 --> 00:01:14,09
+Map dot lib takes care of setting the Y range automatically.
+
+27
+00:01:14,09 --> 00:01:17,00
+By repeating the plot statement,
+
+28
+00:01:17,00 --> 00:01:19,08
+I can show multiple functions together.
+
+29
+00:01:19,08 --> 00:01:23,00
+Map dot lib will automatically cycle through colors
+
+30
+00:01:23,00 --> 00:01:25,07
+so it can distinguish the lines.
+
+31
+00:01:25,07 --> 00:01:28,05
+So let's try our sine together with a cosine
+
+32
+00:01:28,05 --> 00:01:31,04
+and then logarithm.
+
+33
+00:01:31,04 --> 00:01:34,08
+We can add labels to remind us which is which,
+
+34
+00:01:34,08 --> 00:01:38,09
+and then collect the labels in a legend.
+
+35
+00:01:38,09 --> 00:01:41,00
+There are many more options in map dot lib
+
+36
+00:01:41,00 --> 00:01:42,06
+regarding the style of the lines,
+
+37
+00:01:42,06 --> 00:01:45,03
+the formatting of the plot, and more.
+
+38
+00:01:45,03 --> 00:01:49,00
+You can look at the documentation to learn more.
+
+39
+00:01:49,00 --> 00:01:50,08
+We can also perform operations
+
+40
+00:01:50,08 --> 00:01:52,09
+that involve more than one array
+
+41
+00:01:52,09 --> 00:01:57,06
+and everything goes smoothly if we match array shapes.
+
+42
+00:01:57,06 --> 00:02:01,07
+So let's make the cosine in addition of the sine,
+
+43
+00:02:01,07 --> 00:02:04,06
+and let's try combining the two.
+
+44
+00:02:04,06 --> 00:02:08,01
+By contrast, operations between arrays of different shapes
+
+45
+00:02:08,01 --> 00:02:09,09
+generally fail.
+
+46
+00:02:09,09 --> 00:02:13,04
+NumPy doesn't quite know what to do.
+
+47
+00:02:13,04 --> 00:02:15,01
+There is one important exception,
+
+48
+00:02:15,01 --> 00:02:18,00
+which is known as broadcasting.
+
+49
+00:02:18,00 --> 00:02:21,02
+NumPy, when it can, makes sense of operations
+
+50
+00:02:21,02 --> 00:02:23,04
+between arrays of different dimensions
+
+51
+00:02:23,04 --> 00:02:25,01
+rather than shapes.
+
+52
+00:02:25,01 --> 00:02:27,08
+The simplest case, which is rather intuitive,
+
+53
+00:02:27,08 --> 00:02:35,00
+is just to add a single number to an entire array.
+
+54
+00:02:35,00 --> 00:02:40,06
+We see that W is offset by 1.5 with respect to sine X.
+
+55
+00:02:40,06 --> 00:02:45,03
+The plot would also be self-explanatory.
+
+56
+00:02:45,03 --> 00:02:46,09
+Let's go up to two dimensions
+
+57
+00:02:46,09 --> 00:02:50,07
+and then we'll straighten our friend, the Mona Lisa.
+
+58
+00:02:50,07 --> 00:02:55,02
+The image is 200 rows by 134 columns.
+
+59
+00:02:55,02 --> 00:02:58,04
+I can multiply every column by a different number
+
+60
+00:02:58,04 --> 00:03:02,06
+by making a vector of length 134.
+
+61
+00:03:02,06 --> 00:03:05,07
+In this case, NumPy matches the second dimension
+
+62
+00:03:05,07 --> 00:03:11,05
+of the array, with a single dimension of the vector.
+
+63
+00:03:11,05 --> 00:03:13,01
+I want to show you the result
+
+64
+00:03:13,01 --> 00:03:15,02
+side by side with the original image.
+
+65
+00:03:15,02 --> 00:03:18,00
+So I need to do a little work with math dot lib.
+
+66
+00:03:18,00 --> 00:03:20,04
+I will start with a larger figure size,
+
+67
+00:03:20,04 --> 00:03:22,09
+figure and fix size,
+
+68
+00:03:22,09 --> 00:03:24,08
+and then I set up one row
+
+69
+00:03:24,08 --> 00:03:28,06
+with two plots using subplot.
+
+70
+00:03:28,06 --> 00:03:32,08
+The arguments to subplot go one row, two columns,
+
+71
+00:03:32,08 --> 00:03:37,00
+and then the subplot that I want to make.
+
+72
+00:03:37,00 --> 00:03:38,07
+Multiplying the array in this way
+
+73
+00:03:38,07 --> 00:03:41,08
+had the effect of applying horizontal gradient.
+
+74
+00:03:41,08 --> 00:03:43,07
+What about the other way around?
+
+75
+00:03:43,07 --> 00:03:45,07
+If I make a vector of length 200,
+
+76
+00:03:45,07 --> 00:03:49,06
+you'd think we could apply it on the left
+
+77
+00:03:49,06 --> 00:03:54,08
+to multiply every row by a single value.
+
+78
+00:03:54,08 --> 00:03:56,05
+That however doesn't work.
+
+79
+00:03:56,05 --> 00:04:00,04
+What works is to add a new dimension of length one
+
+80
+00:04:00,04 --> 00:04:03,00
+to the gradient vector, which we can do
+
+81
+00:04:03,00 --> 00:04:08,09
+with a special indexing notation, NP dot new axis.
+
+82
+00:04:08,09 --> 00:04:12,08
+The shape of Y grad is now 200 by one.
+
+83
+00:04:12,08 --> 00:04:16,02
+NumPy broadcasting then matches the first dimension
+
+84
+00:04:16,02 --> 00:04:20,00
+of the two arrays, Mona Lisa BW and Y grad,
+
+85
+00:04:20,00 --> 00:04:23,02
+and broadcasts the second dimension of Y grad
+
+86
+00:04:23,02 --> 00:04:28,01
+to fill up the corresponding range in Mona Lisa.
+
+87
+00:04:28,01 --> 00:04:32,01
+The result is the vertical gradient.
+
+88
+00:04:32,01 --> 00:04:36,00
+NumPy supports many other useful mathematical operations,
+
+89
+00:04:36,00 --> 00:04:39,04
+including fast fully transforms, random numbers,
+
+90
+00:04:39,04 --> 00:04:43,01
+statistics, interpolation, and linear algebra.
+
+91
+00:04:43,01 --> 00:04:44,01
+If you need any of them,
+
+92
+00:04:44,01 --> 00:04:47,01
+you can go read the NumPy documentation.
+
+93
+00:04:47,01 --> 00:04:49,04
+There is one thing I want to show you here.
+
+94
+00:04:49,04 --> 00:04:51,04
+It's that since version 3.5,
+
+95
+00:04:51,04 --> 00:04:55,02
+Python implements a special matrix multiplication operator.
+
+96
+00:04:55,02 --> 00:04:59,03
+The at symbol, which is put to good use by NumPy.
+
+97
+00:04:59,03 --> 00:05:01,01
+For instance, we can use it
+
+98
+00:05:01,01 --> 00:05:05,08
+to make the dot product of two vectors.
+
+99
+00:05:05,08 --> 00:05:10,00
+A and B, each of three elements.
+
+100
+00:05:10,00 --> 00:05:16,06
+This is the same as writing NumPy dot dot AB.
+
+101
+00:05:16,06 --> 00:05:19,04
+Or we could write the products of a three by three matrix
+
+102
+00:05:19,04 --> 00:05:21,00
+in a three vector.
+

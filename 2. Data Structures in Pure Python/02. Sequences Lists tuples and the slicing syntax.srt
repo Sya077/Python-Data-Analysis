@@ -1,0 +1,400 @@
+1
+00:00:00,05 --> 00:00:03,04
+- [Instructor] In this movie, we are going to review lists.
+
+2
+00:00:03,04 --> 00:00:06,02
+They are the quintessential Python container.
+
+3
+00:00:06,02 --> 00:00:08,04
+They provide a way to store an arbitrary number
+
+4
+00:00:08,04 --> 00:00:12,03
+of Python objects such as strings, floating-point numbers,
+
+5
+00:00:12,03 --> 00:00:15,02
+other lists, or any other object
+
+6
+00:00:15,02 --> 00:00:18,04
+and to access them using a numerical index.
+
+7
+00:00:18,04 --> 00:00:21,03
+In Python lists are denoted by brackets and their elements
+
+8
+00:00:21,03 --> 00:00:24,03
+are separated by commas.
+
+9
+00:00:24,03 --> 00:00:28,04
+The length of a list is obtained with len.
+
+10
+00:00:28,04 --> 00:00:32,04
+Indexing, individual list elements can be accessed by index.
+
+11
+00:00:32,04 --> 00:00:34,08
+Starting with zero for the first element
+
+12
+00:00:34,08 --> 00:00:39,02
+and ending at the length of the list minus one.
+
+13
+00:00:39,02 --> 00:00:43,02
+This convention of starting from zero comes from C,
+
+14
+00:00:43,02 --> 00:00:45,04
+the language that inspired Python
+
+15
+00:00:45,04 --> 00:00:48,01
+and that was used to write the standard Python interpreter
+
+16
+00:00:48,01 --> 00:00:50,02
+known as CPython.
+
+17
+00:00:50,02 --> 00:00:53,09
+For instance, the first nephew is Huey.
+
+18
+00:00:53,09 --> 00:00:57,00
+We can also look for the last nephew
+
+19
+00:00:57,00 --> 00:00:59,08
+and we can even look for a nephew beyond the end of the list
+
+20
+00:00:59,08 --> 00:01:04,01
+which in this case will yield an error.
+
+21
+00:01:04,01 --> 00:01:06,02
+We can also index from the end.
+
+22
+00:01:06,02 --> 00:01:09,09
+Starting at minus one and going down.
+
+23
+00:01:09,09 --> 00:01:12,07
+That gets us Louie and Dewey.
+
+24
+00:01:12,07 --> 00:01:14,06
+The bracket indexing notation,
+
+25
+00:01:14,06 --> 00:01:17,05
+can also be used to reassign elements.
+
+26
+00:01:17,05 --> 00:01:22,03
+Let's do that for all the nephews with a simple loop.
+
+27
+00:01:22,03 --> 00:01:24,06
+Here we're just adding their last name.
+
+28
+00:01:24,06 --> 00:01:27,03
+It's important to remember that lists do not need
+
+29
+00:01:27,03 --> 00:01:30,05
+to have homogeneous content such as all strings
+
+30
+00:01:30,05 --> 00:01:31,08
+or all numbers.
+
+31
+00:01:31,08 --> 00:01:34,01
+We can mix it up.
+
+32
+00:01:34,01 --> 00:01:36,03
+To add a single element at the end of the list,
+
+33
+00:01:36,03 --> 00:01:39,00
+we use append.
+
+34
+00:01:39,00 --> 00:01:41,03
+You see that here we are using Python
+
+35
+00:01:41,03 --> 00:01:43,02
+in an object-oriented way.
+
+36
+00:01:43,02 --> 00:01:46,06
+By accessing the method, specifically append,
+
+37
+00:01:46,06 --> 00:01:48,02
+of the list object.
+
+38
+00:01:48,02 --> 00:01:51,07
+It's so easy that we barely notice it.
+
+39
+00:01:51,07 --> 00:01:58,00
+To add multiple elements in one go, we can use extend.
+
+40
+00:01:58,00 --> 00:02:01,03
+To concatenate two lists, we use a plus.
+
+41
+00:02:01,03 --> 00:02:04,07
+That's an example of operator overloading in Python
+
+42
+00:02:04,07 --> 00:02:09,05
+where plus does different things for numbers and for lists.
+
+43
+00:02:09,05 --> 00:02:13,04
+Last, we can insert elements at any position in a list
+
+44
+00:02:13,04 --> 00:02:16,08
+using the insert method.
+
+45
+00:02:16,08 --> 00:02:19,02
+How about removing elements?
+
+46
+00:02:19,02 --> 00:02:24,02
+We can delete them based on their index with del
+
+47
+00:02:24,02 --> 00:02:28,05
+or based on the value with remove.
+
+48
+00:02:28,05 --> 00:02:32,01
+If we want a list sorted we can do this in place.
+
+49
+00:02:32,01 --> 00:02:38,00
+So we modify an existing list with sort.
+
+50
+00:02:38,00 --> 00:02:41,04
+Or we can make a new sorted list out of an existing one
+
+51
+00:02:41,04 --> 00:02:43,04
+with sorted.
+
+52
+00:02:43,04 --> 00:02:46,04
+Which demonstrates also how to sort backwards.
+
+53
+00:02:46,04 --> 00:02:49,01
+All of this should be very basic to you
+
+54
+00:02:49,01 --> 00:02:52,02
+if you work with Python in the past.
+
+55
+00:02:52,02 --> 00:02:55,01
+Moving on to slices.
+
+56
+00:02:55,01 --> 00:02:57,03
+Beyond working with individual list elements,
+
+57
+00:02:57,03 --> 00:03:00,01
+we can manipulate them in groups.
+
+58
+00:03:00,01 --> 00:03:03,06
+The convention is the same as for Python loops.
+
+59
+00:03:03,06 --> 00:03:07,03
+The first index is included, the last is not.
+
+60
+00:03:07,03 --> 00:03:10,01
+It's useful sometimes, to think of the indices
+
+61
+00:03:10,01 --> 00:03:15,04
+as being placed at the edges of the cells in a list.
+
+62
+00:03:15,04 --> 00:03:17,07
+We make an example based on the first few squares
+
+63
+00:03:17,07 --> 00:03:20,09
+of the natural numbers.
+
+64
+00:03:20,09 --> 00:03:22,05
+If we want the first two squares,
+
+65
+00:03:22,05 --> 00:03:26,03
+we'd write a slice that goes from zero to two.
+
+66
+00:03:26,03 --> 00:03:29,00
+There are a few more tricks that we can use in slicing.
+
+67
+00:03:29,00 --> 00:03:31,03
+For instance we can omit the starting index
+
+68
+00:03:31,03 --> 00:03:32,08
+to start at the beginning,
+
+69
+00:03:32,08 --> 00:03:36,05
+omit the ending index to include elements to the end.
+
+70
+00:03:36,05 --> 00:03:40,03
+Omit both, to get a copy of the list.
+
+71
+00:03:40,03 --> 00:03:43,08
+Move through the indices in steps.
+
+72
+00:03:43,08 --> 00:03:48,06
+And even use negative indices to count from the end.
+
+73
+00:03:48,06 --> 00:03:53,05
+Slices can also be used to reassign a subset of items
+
+74
+00:03:53,05 --> 00:03:56,07
+or to delete them.
+
+75
+00:03:56,07 --> 00:03:58,09
+When we introduce NumPy arrays in chapter four,
+
+76
+00:03:58,09 --> 00:04:02,06
+we will see that this basic slicing syntax carries over.
+
+77
+00:04:02,06 --> 00:04:06,01
+So it's good to understand it fully on lists first.
+
+78
+00:04:06,01 --> 00:04:08,09
+The empty list is written with an empty set of brackets
+
+79
+00:04:08,09 --> 00:04:12,06
+and obviously it has length zero.
+
+80
+00:04:12,06 --> 00:04:15,05
+Now for tuples, which look like lists
+
+81
+00:04:15,05 --> 00:04:19,04
+but with parentheses instead of brackets.
+
+82
+00:04:19,04 --> 00:04:22,08
+They are sometimes described as immutable versions of lists.
+
+83
+00:04:22,08 --> 00:04:26,01
+We can do the same indexing and slicing tricks,
+
+84
+00:04:26,01 --> 00:04:31,02
+but we cannot modify the elements or add new ones.
+
+85
+00:04:31,02 --> 00:04:34,00
+One context in which one sees tuples often
+
+86
+00:04:34,00 --> 00:04:36,06
+is tuple unpacking, where Python statements
+
+87
+00:04:36,06 --> 00:04:39,03
+or expressions are automatically evaluated in parallel
+
+88
+00:04:39,03 --> 00:04:41,04
+over a tuple.
+
+89
+00:04:41,04 --> 00:04:45,09
+For instance, to assign multiple variables at once.
+
+90
+00:04:45,09 --> 00:04:48,01
+The parentheses can even be omitted when there is no
+
+91
+00:04:48,01 --> 00:04:50,08
+room for ambiguity.
+
+92
+00:04:50,08 --> 00:04:52,04
+Tuples appear also when we iterate
+
+93
+00:04:52,04 --> 00:04:54,09
+over multiple variables at once.
+
+94
+00:04:54,09 --> 00:04:58,04
+For example using the enumerate iterator on a list.
+
+95
+00:04:58,04 --> 00:05:00,02
+Which lets us loop over list index
+
+96
+00:05:00,02 --> 00:05:03,02
+and list element together.
+
+97
+00:05:03,02 --> 00:05:06,09
+We can also unpack a tuple to pass it to a function
+
+98
+00:05:06,09 --> 00:05:11,08
+that requires multiple arguments such as three args.
+
+99
+00:05:11,08 --> 00:05:16,08
+It takes a tuple if we prefix it with an asterisk.
+
+100
+00:05:16,08 --> 00:05:19,00
+This ends our review of lists.
+
